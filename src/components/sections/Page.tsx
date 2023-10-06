@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Header from "./Header"
+import Footer from "./Footer"
 
 interface Props {
 	title?: string
@@ -17,6 +18,8 @@ function Page(props: Props) {
 			<Header />
 
 			{props.children}
+
+			<Footer className="mt-16" />
 		</>
 	)
 }
