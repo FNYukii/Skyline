@@ -1,6 +1,8 @@
 import Page from "@/components/sections/Page";
 import PostListSection from "@/components/sections/PostListSection";
 import SearchSection from "@/components/sections/SearchSection";
+import AllTagListSection from "@/components/sections/AllTagListSection";
+import HotTagListSection from "@/components/sections/HotTagListSection";
 
 export default function Home() {
 
@@ -14,7 +16,12 @@ export default function Home() {
 
 					<PostListSection className="w-2/3" />
 
-					<SearchSection className="w-1/3 pl-8"/>
+					<div className="w-1/3 pl-8">
+
+						<SearchSection />
+						<HotTagListSection className="mt-4"/>
+						<AllTagListSection className="mt-4" />
+					</div>
 				</div>
 			</main>
 		</Page>
