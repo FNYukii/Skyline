@@ -1,3 +1,4 @@
+import Header from "@/components/sections/Header";
 import Head from "next/head";
 
 export default function Home() {
@@ -8,8 +9,10 @@ export default function Home() {
 				<title>Skyline</title>
 			</Head>
 
+			<Header />
+
 			<main>
-				<h1>Skyline</h1>
+				<p>Top</p>
 			</main>
 		</>
 	)
