@@ -1,8 +1,8 @@
-import Page from "@/components/sections/Page";
-import PostListSection from "@/components/sections/PostListSection";
-import SearchSection from "@/components/sections/SearchSection";
-import AllTagListSection from "@/components/sections/AllTagListSection";
-import HotTagListSection from "@/components/sections/HotTagListSection";
+import Page from "@/components/sections/Page"
+import PostListSection from "@/components/sections/PostListSection"
+import SearchSection from "@/components/sections/SearchSection"
+import AllTagListSection from "@/components/sections/AllTagListSection"
+import HotTagListSection from "@/components/sections/HotTagListSection"
 
 export default function Home() {
 
