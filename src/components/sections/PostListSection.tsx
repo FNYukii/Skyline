@@ -50,17 +50,20 @@ function PostListSection(props: Props) {
 					<div key={index}>
 
 						<div>
-							<img src={post.thumbnail} alt={post.title} />
+							<Link href="/" className="hover:brightness-90 transition">
+
+								<img src={post.thumbnail} alt={post.title} className="aspect-video object-cover" />
+							</Link>
 						</div>
 
 						<div className="mt-2">
-							<Link href="/" className="text-lg font-bold">{post.title}</Link>
+							<Link href="/" className="text-lg font-bold hover:underline">{post.title}</Link>
 						</div>
 
 						<div className="text-gray-500 flex gap-2">
 							{post.tags.map((tag, index) => (
 
-								<button key={index}>{tag}</button>
+								<button key={index} className="hover:underline">{tag}</button>
 							))}
 						</div>
 					</div>
