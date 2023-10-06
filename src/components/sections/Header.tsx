@@ -8,7 +8,7 @@ function Header() {
 
 			<div className="py-2 flex justify-between items-center w-full lg:width-lg px-4 lg:px-0 mx-auto">
 
-				<Link href="/" className="text-4xl ">Skyline</Link>
+				<Link href="/" className="text-4xl font-light">Skyline</Link>
 
 				<div className="flex gap-8">
 
