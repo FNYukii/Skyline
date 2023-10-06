@@ -17,7 +17,7 @@ function Footer(props: Props) {
 					<div className="w-1/3">
 
 						<Link href="/" className="text-4xl font-light">Skyline</Link>
-						<p className="mt-1 text-gray-400">超高層ビルまとめブログ</p>
+						<p className="mt-1 text-gray-400">好きなビルを語るブログ</p>
 					</div>
 
 					<div className="w-1/3">
