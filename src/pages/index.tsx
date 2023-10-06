@@ -1,5 +1,5 @@
-import Header from "@/components/sections/Header";
 import Page from "@/components/sections/Page";
+import PostListSection from "@/components/sections/PostListSection";
 
 export default function Home() {
 
@@ -9,7 +9,7 @@ export default function Home() {
 
 			<main className="w-full lg:width-lg px-4 lg:px-0 mx-auto">
 
-				<p className="mt-4">Hello</p>
+				<PostListSection className="mt-12 w-2/3"/>
 			</main>
 		</Page>
 	)
