@@ -1,19 +1,12 @@
 import Header from "@/components/sections/Header";
-import Head from "next/head";
+import Page from "@/components/sections/Page";
 
 export default function Home() {
+
 	return (
 
-		<>
-			<Head>
-				<title>Skyline</title>
-			</Head>
-
-			<Header />
-
-			<main>
-				<p>Top</p>
-			</main>
-		</>
+		<Page>
+			<p>hello</p>
+		</Page>
 	)
 }
