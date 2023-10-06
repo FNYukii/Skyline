@@ -4,13 +4,13 @@ function Header() {
 
 	return (
 
-		<header className="bg-blue-950 text-white">
+		<header className="bg-accent-color text-white">
 
 			<div className="py-2 flex justify-between items-center w-full lg:width-lg px-4 lg:px-0 mx-auto">
 
-				<Link href="/" className="text-3xl">Skyline</Link>
+				<Link href="/" className="text-4xl ">Skyline</Link>
 
-				<div className="flex gap-4">
+				<div className="flex gap-8">
 
 					<Link href="/" className="hover:underline">Top</Link>
 					<Link href="/map" className="hover:underline">Map</Link>

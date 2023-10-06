@@ -23,4 +23,8 @@
 	.width-600 {
 		width: 600px;
 	}
+
+	.bg-accent-color {
+		background-color: #292c34;
+	}
 }
