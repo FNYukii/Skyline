@@ -37,6 +37,16 @@ function PostListSection(props: Props) {
 			tags: ["大阪", "梅田", "日本郵政", "JPタワー"],
 			thumbnail: "https://images.unsplash.com/photo-1443527394413-4b820fd08dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80"
 		},
+		{
+			title: "JPタワー大阪",
+			tags: ["大阪", "梅田", "日本郵政", "JPタワー"],
+			thumbnail: "https://images.unsplash.com/photo-1443527394413-4b820fd08dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80"
+		},
+		{
+			title: "JPタワー大阪",
+			tags: ["大阪", "梅田", "日本郵政", "JPタワー"],
+			thumbnail: "https://images.unsplash.com/photo-1443527394413-4b820fd08dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80"
+		},
 	]
 
 	return (
