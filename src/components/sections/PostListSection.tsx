@@ -79,6 +79,11 @@ function PostListSection(props: Props) {
 					</div>
 				))}
 			</div>
+
+			<div className="flex justify-center">
+
+				<button className="mt-12 py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">もっと見る</button>
+			</div>
 		</div>
 	)
 }

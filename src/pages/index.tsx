@@ -14,12 +14,14 @@ export default function Home() {
 
 				<div className="mt-12 flex">
 
-					<PostListSection className="w-2/3" />
+					<div className="w-2/3">
+						<PostListSection />
+					</div>
 
 					<div className="w-1/3 pl-8">
 
 						<SearchSection />
-						<HotTagListSection className="mt-4"/>
+						<HotTagListSection className="mt-4" />
 						<AllTagListSection className="mt-4" />
 					</div>
 				</div>
