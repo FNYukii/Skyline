@@ -30,10 +30,10 @@ function PostListSection(props: Props) {
 							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.data.title}</Link>
 						</div>
 
-						<div className="flex gap-2">
+						<div className="overflow-hidden text-ellipsis whitespace-nowrap">
 							{post.data.tags.map((tag, index) => (
 
-								<button key={index} className="text-gray-500 hover:underline">{tag}</button>
+								<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
 							))}
 						</div>
 
