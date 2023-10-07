@@ -10,10 +10,10 @@ import Post from "@/entities/Post"
 
 export const getStaticProps = () => {
 
-	// postsフォルダ内のファイルをすべて取得
+	// postsフォルダ内のファイル名をすべて取得
 	const fileNames = fs.readdirSync('posts')
 
-	// ファイルの内容をbaseName, data, contentに分けてまとめる
+	// posts配列を生成
 	const posts = fileNames.map((fileName) => {
 
 		// ベース名(ファイル名から拡張子を除去したもの)
@@ -25,15 +25,22 @@ export const getStaticProps = () => {
 		// ファイル内のテキストをdataとContentに分離
 		const { data, content } = matter(textInFile)
 
+		// dataオフジェクトにtitle, tags, thumbnailプロパティがあることを確認する
+		const title: string = data.title
+		const tags: string[] = data.tags
+		const thumbnail: string = data.thumbnail
+
+		// Post型オブジェクトにまとめる
 		const post: Post = {
 			baseName: baseName,
-			data: data,
+			data: {title, tags, thumbnail},
 			content: content
 		}
 
 		return post
 	})
 
+	// 生成したposts配列をHomeコンポーネントに渡す
 	return {
 		props: {
 			posts,
