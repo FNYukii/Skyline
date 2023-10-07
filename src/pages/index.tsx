@@ -7,6 +7,7 @@ import HotTagListSection from "@/components/sections/HotTagListSection"
 import fs from 'fs'
 import matter from 'gray-matter'
 import Post from "@/entities/Post"
+import dayjs from "dayjs"
 
 export const getStaticProps = () => {
 
@@ -25,22 +26,24 @@ export const getStaticProps = () => {
 		// ファイル内のテキストをdataとContentに分離
 		const { data, content } = matter(textInFile)
 
-		// dataオフジェクトからtitle, tags, thumbnailプロパティの値を取り出す
+		// dataオフジェクトからtitle, tags, date, thumbnailプロパティの値を取り出す
 		const title: string = data.title
 		const tags: string[] = data.tags
+		const date: string = data.date
 		const thumbnail: string = data.thumbnail
 
 		// mdファイルのベース名をidとして、postオブジェクトを生成
 		const post: Post = {
 			id: baseName,
-			data: {title, tags, thumbnail},
+			data: { title, tags, date, thumbnail },
 			content: content
 		}
 
 		return post
 	})
 
-	// TODO: posts配列内の要素を並べ替え
+	// posts配列内の要素を並べ替え
+	posts.sort((a, b) => dayjs(b.data.date).toDate().valueOf() - dayjs(a.data.date).toDate().valueOf())
 
 	// 生成したposts配列をHomeコンポーネントに渡す
 	return {
@@ -65,7 +68,7 @@ export default function Home(props: Props) {
 				<div className="mt-12 flex">
 
 					<div className="w-2/3">
-						<PostListSection posts={props.posts}/>
+						<PostListSection posts={props.posts} />
 					</div>
 
 					<div className="w-1/3 pl-8">

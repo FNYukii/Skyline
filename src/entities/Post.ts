@@ -4,6 +4,7 @@ type Post = {
 	data: {
 		title: string
 		tags: string[]
+		date: string
 		thumbnail: string
 	}
 	content: string
