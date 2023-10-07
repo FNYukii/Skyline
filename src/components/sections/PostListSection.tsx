@@ -1,4 +1,5 @@
 import Post from "@/entities/Post"
+import dayjs from "dayjs"
 import Link from "next/link"
 
 interface Props {
@@ -29,11 +30,15 @@ function PostListSection(props: Props) {
 							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.data.title}</Link>
 						</div>
 
-						<div className="text-gray-500 flex gap-2">
+						<div className="flex gap-2">
 							{post.data.tags.map((tag, index) => (
 
-								<button key={index} className="hover:underline">{tag}</button>
+								<button key={index} className="text-gray-500 hover:underline">{tag}</button>
 							))}
+						</div>
+
+						<div>
+							<p className="text-gray-500">{dayjs(post.data.date).format("YYYY年MM月DD日")}</p>
 						</div>
 					</div>
 				))}
