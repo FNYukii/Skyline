@@ -30,7 +30,7 @@ function PostListSection(props: Props) {
 						</div>
 
 						<div className="text-gray-500 flex gap-2">
-							{post.data.tags.map((tag: any, index: any) => (
+							{post.data.tags.map((tag, index) => (
 
 								<button key={index} className="hover:underline">{tag}</button>
 							))}

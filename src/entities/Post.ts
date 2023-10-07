@@ -2,7 +2,9 @@ type Post = {
 
 	baseName: string
 	data: {
-		[key: string]: any
+		title: string
+		tags: string[]
+		thumbnail: string
 	}
 	content: string
 }
