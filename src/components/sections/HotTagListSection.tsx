@@ -18,7 +18,7 @@ function HotTagListSection(props: Props) {
 
 					{tags.map((tag, index) => (
 
-						<button className="text-gray-600 hover:underline">{tag}</button>
+						<button key={index} className="text-gray-600 hover:underline">{tag}</button>
 					))}
 				</div>
 			</div>
