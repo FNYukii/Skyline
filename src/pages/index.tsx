@@ -25,20 +25,22 @@ export const getStaticProps = () => {
 		// ファイル内のテキストをdataとContentに分離
 		const { data, content } = matter(textInFile)
 
-		// dataオフジェクトにtitle, tags, thumbnailプロパティがあることを確認する
+		// dataオフジェクトからtitle, tags, thumbnailプロパティの値を取り出す
 		const title: string = data.title
 		const tags: string[] = data.tags
 		const thumbnail: string = data.thumbnail
 
-		// Post型オブジェクトにまとめる
+		// mdファイルのベース名をidとして、postオブジェクトを生成
 		const post: Post = {
-			baseName: baseName,
+			id: baseName,
 			data: {title, tags, thumbnail},
 			content: content
 		}
 
 		return post
 	})
+
+	// TODO: posts配列内の要素を並べ替え
 
 	// 生成したposts配列をHomeコンポーネントに渡す
 	return {

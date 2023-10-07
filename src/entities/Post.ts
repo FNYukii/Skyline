@@ -1,6 +1,6 @@
 type Post = {
 
-	baseName: string
+	id: string
 	data: {
 		title: string
 		tags: string[]

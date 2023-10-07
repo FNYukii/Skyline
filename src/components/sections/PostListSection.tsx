@@ -19,14 +19,14 @@ function PostListSection(props: Props) {
 					<div key={index}>
 
 						<div>
-							<Link href={`/posts/${post.baseName}`} className="hover:brightness-90 transition">
+							<Link href={`/posts/${post.id}`} className="hover:brightness-90 transition">
 
 								<img src={post.data.thumbnail} alt={post.data.title} className="aspect-video object-cover" />
 							</Link>
 						</div>
 
 						<div className="mt-2">
-							<Link href={`/posts/${post.baseName}`} className="text-lg font-bold hover:underline">{post.data.title}</Link>
+							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.data.title}</Link>
 						</div>
 
 						<div className="text-gray-500 flex gap-2">
