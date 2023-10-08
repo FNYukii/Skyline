@@ -38,7 +38,7 @@ function Footer(props: Props) {
 
 						<div className="mt-2 flex flex-col">
 
-							<a target="blank" href="/" className="text-gray-400 hover:underline">Source</a>
+							<a target="blank" href="https://github.com/FNYukii/Skyline" className="text-gray-400 hover:underline">Source</a>
 						</div>
 					</div>
 				</div>
