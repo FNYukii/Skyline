@@ -1,4 +1,4 @@
-import Page from "@/components/sections/Page"
+import Page from "@/components/others/Page"
 import PostListSection from "@/components/sections/PostListSection"
 import SearchSection from "@/components/sections/SearchSection"
 import fs from 'fs'

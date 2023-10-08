@@ -1,6 +1,6 @@
 import Head from "next/head"
-import Header from "./Header"
-import Footer from "./Footer"
+import Header from "../sections/Header"
+import Footer from "../sections/Footer"
 
 interface Props {
 	title?: string
