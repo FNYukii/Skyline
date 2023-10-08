@@ -9,9 +9,9 @@ import matter from 'gray-matter'
 import Post from "@/entities/Post"
 import dayjs from "dayjs"
 
-export const getStaticProps = () => {
+function getStaticProps() {
 
-	// postsフォルダ内のファイル名をすべて取得
+	// postsフォルダ内のファイルのファイル名をすべて取得
 	const fileNames = fs.readdirSync('posts')
 
 	// posts配列を生成
@@ -32,7 +32,7 @@ export const getStaticProps = () => {
 		const date: string = data.date
 		const thumbnail: string = data.thumbnail
 
-		// mdファイルのベース名をidとして、postオブジェクトを生成
+		// ファイルのベース名をidとして、postオブジェクトを生成
 		const post: Post = {
 			id: baseName,
 			data: { title, tags, date, thumbnail },
@@ -57,7 +57,7 @@ interface Props {
 	posts: Post[],
 }
 
-export default function Home(props: Props) {
+function Home(props: Props) {
 
 	return (
 
@@ -82,3 +82,6 @@ export default function Home(props: Props) {
 		</Page>
 	)
 }
+
+export { getStaticProps }
+export default Home
