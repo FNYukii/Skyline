@@ -1,6 +1,7 @@
 import AllTagListSection from '@/components/sections/AllTagListSection'
 import HotTagListSection from '@/components/sections/HotTagListSection'
 import Page from '@/components/sections/Page'
+import PostTagListSection from '@/components/sections/PostTagListSection'
 import SearchSection from '@/components/sections/SearchSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import Post from '@/entities/Post'
@@ -85,6 +86,8 @@ function PostPage(props: Props) {
 					<div className="w-1/3 pl-8">
 
 						<TableOfContentsSection />
+
+						<PostTagListSection tags={props.post.data.tags} className='mt-4' />
 
 						<SearchSection className='mt-12' />
 						<HotTagListSection className="mt-4" />
