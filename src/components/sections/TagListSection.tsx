@@ -19,7 +19,7 @@ function TagListSection(props: Props) {
 
 					{props.tags.map((tag, index) => (
 
-						<button key={index} className="text-gray-600 hover:underline">{tag}</button>
+						<button key={index} className="text-gray-600 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</button>
 					))}
 				</div>
 			</div>
