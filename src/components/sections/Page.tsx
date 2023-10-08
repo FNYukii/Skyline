@@ -12,7 +12,7 @@ function Page(props: Props) {
 	return (
 		<>
 			<Head>
-				<title>{props.title ? `${props.title} - Skyline` : "Skyline"}</title>
+				<title>{props.title ?? "Skyline"}</title>
 			</Head>
 
 			<Header />
