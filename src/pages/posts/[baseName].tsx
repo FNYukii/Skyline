@@ -6,7 +6,7 @@ import Post from '@/entities/Post'
 import fs from 'fs'
 import matter from 'gray-matter'
 
-export async function getStaticPaths() {
+function getStaticPaths() {
 
 	// mdファイル一覧を取得
 	const fileNames = fs.readdirSync('posts')
@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 	}
 }
 
-export async function getStaticProps({ params }: any) {
+function getStaticProps({ params }: any) {
 
 	// 表示する記事のmdファイルのベース名を取得
 	const baseName = params.baseName
@@ -62,6 +62,7 @@ export async function getStaticProps({ params }: any) {
 	}
 }
 
+
 interface Props {
 	post: Post
 }
@@ -84,7 +85,7 @@ function PostPage(props: Props) {
 
 						<p>Table of content here</p>
 
-						<SearchSection className='mt-4'/>
+						<SearchSection className='mt-4' />
 						<HotTagListSection className="mt-4" />
 						<AllTagListSection className="mt-4" />
 					</div>
@@ -95,4 +96,5 @@ function PostPage(props: Props) {
 	)
 }
 
+export { getStaticPaths, getStaticProps }
 export default PostPage

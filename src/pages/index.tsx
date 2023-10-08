@@ -3,7 +3,6 @@ import PostListSection from "@/components/sections/PostListSection"
 import SearchSection from "@/components/sections/SearchSection"
 import AllTagListSection from "@/components/sections/AllTagListSection"
 import HotTagListSection from "@/components/sections/HotTagListSection"
-
 import fs from 'fs'
 import matter from 'gray-matter'
 import Post from "@/entities/Post"
@@ -52,6 +51,7 @@ function getStaticProps() {
 		},
 	}
 }
+
 
 interface Props {
 	posts: Post[],
