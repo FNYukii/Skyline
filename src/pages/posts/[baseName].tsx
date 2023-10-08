@@ -2,6 +2,7 @@ import AllTagListSection from '@/components/sections/AllTagListSection'
 import HotTagListSection from '@/components/sections/HotTagListSection'
 import Page from '@/components/sections/Page'
 import SearchSection from '@/components/sections/SearchSection'
+import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import Post from '@/entities/Post'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -83,9 +84,9 @@ function PostPage(props: Props) {
 
 					<div className="w-1/3 pl-8">
 
-						<p>Table of content here</p>
+						<TableOfContentsSection />
 
-						<SearchSection className='mt-4' />
+						<SearchSection className='mt-12' />
 						<HotTagListSection className="mt-4" />
 						<AllTagListSection className="mt-4" />
 					</div>
