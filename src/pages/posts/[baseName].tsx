@@ -53,7 +53,10 @@ function getStaticProps({ params }: any) {
 	// ファイルのベース名をidとして、postオブジェクトを生成
 	const post: Post = {
 		id: baseName,
-		data: { title, tags, date, thumbnail },
+		title: title,
+		tags: tags,
+		date: date,
+		thumbnail: thumbnail,
 		content: content
 	}
 
@@ -74,7 +77,7 @@ function PostPage(props: Props) {
 
 	return (
 
-		<Page title={`${props.post.data.title} - Skyline`}>
+		<Page title={`${props.post.title} - Skyline`}>
 
 			<main className="w-full lg:width-lg px-4 lg:px-0 mx-auto">
 
@@ -88,7 +91,7 @@ function PostPage(props: Props) {
 					<div className="w-1/3 pl-8">
 
 						<TableOfContentsSection />
-						<PostTagListSection tags={props.post.data.tags} className='mt-4' />
+						<PostTagListSection tags={props.post.tags} className='mt-4' />
 
 						<SearchSection className='mt-12' />
 						<HotTagListSection className="mt-4" />

@@ -11,7 +11,7 @@ function PostSection(props: Props) {
 
 		<div className={props.className}>
 
-			<h1 className="text-2xl font-bold">{props.post.data.title}</h1>
+			<h1 className="text-2xl font-bold">{props.post.title}</h1>
 			<p>Article here</p>
 		</div>
 	)

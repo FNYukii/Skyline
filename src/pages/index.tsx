@@ -34,7 +34,10 @@ function getStaticProps() {
 		// ファイルのベース名をidとして、postオブジェクトを生成
 		const post: Post = {
 			id: baseName,
-			data: { title, tags, date, thumbnail },
+			title: title,
+			tags: tags,
+			date: date,
+			thumbnail: thumbnail,
 			content: content
 		}
 
@@ -42,7 +45,7 @@ function getStaticProps() {
 	})
 
 	// posts配列内の要素を並べ替え
-	posts.sort((a, b) => dayjs(b.data.date).toDate().valueOf() - dayjs(a.data.date).toDate().valueOf())
+	posts.sort((a, b) => dayjs(b.date).toDate().valueOf() - dayjs(a.date).toDate().valueOf())
 
 	// 生成したposts配列をHomeコンポーネントに渡す
 	return {

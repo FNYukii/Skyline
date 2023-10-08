@@ -22,23 +22,23 @@ function PostListSection(props: Props) {
 						<div>
 							<Link href={`/posts/${post.id}`} className="hover:brightness-90">
 
-								<img src={post.data.thumbnail} alt={post.data.title} className="aspect-video object-cover" />
+								<img src={post.thumbnail} alt={post.title} className="aspect-video object-cover" />
 							</Link>
 						</div>
 
 						<div className="mt-2">
-							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.data.title}</Link>
+							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.title}</Link>
 						</div>
 
 						<div className="overflow-hidden text-ellipsis whitespace-nowrap">
-							{post.data.tags.map((tag, index) => (
+							{post.tags.map((tag, index) => (
 
 								<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
 							))}
 						</div>
 
 						<div>
-							<p className="text-gray-500">{dayjs(post.data.date).format("YYYY年MM月DD日")}</p>
+							<p className="text-gray-500">{dayjs(post.date).format("YYYY年MM月DD日")}</p>
 						</div>
 					</div>
 				))}
