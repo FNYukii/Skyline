@@ -8,8 +8,7 @@ function TableOfContentsSection(props: Props) {
 		"概要",
 		"最新鋭のオフィス",
 		"外資系ホテルが入居予定",
-		"計画詳細",
-		"関連タグ"
+		"計画詳細"
 	]
 
 	return (
