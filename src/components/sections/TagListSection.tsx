@@ -1,9 +1,11 @@
 interface Props {
 	className?: string
+	
+	label: string
 	tags: string[]
 }
 
-function PostTagListSection(props: Props) {
+function TagListSection(props: Props) {
 
 	return (
 
@@ -11,7 +13,7 @@ function PostTagListSection(props: Props) {
 
 			<div className="bg-gray-100 p-4">
 
-				<p>関連タグ</p>
+				<p>{props.label}</p>
 
 				<div className="mt-2 flex flex-wrap gap-x-2 gap-y-1">
 
@@ -25,4 +27,4 @@ function PostTagListSection(props: Props) {
 	)
 }
 
-export default PostTagListSection
+export default TagListSection

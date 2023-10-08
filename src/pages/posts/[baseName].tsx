@@ -1,10 +1,8 @@
-import AllTagListSection from '@/components/sections/AllTagListSection'
-import HotTagListSection from '@/components/sections/HotTagListSection'
 import Page from '@/components/sections/Page'
 import PostSection from '@/components/sections/PostSection'
-import PostTagListSection from '@/components/sections/PostTagListSection'
 import SearchSection from '@/components/sections/SearchSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
+import TagListSection from '@/components/sections/TagListSection'
 import Post from '@/entities/Post'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -91,11 +89,11 @@ function PostPage(props: Props) {
 					<div className="w-1/3 pl-8">
 
 						<TableOfContentsSection />
-						<PostTagListSection tags={props.post.tags} className='mt-4' />
+						<TagListSection tags={props.post.tags} className='mt-4' label={''} />
 
 						<SearchSection className='mt-12' />
-						<HotTagListSection className="mt-4" />
-						<AllTagListSection className="mt-4" />
+						<TagListSection label="人気のタグ" className='mt-4' tags={["うめきた", "阪神電車", "近畿日本鉄道", "百貨店", "オフィスビル", "鉄筋鉄骨コンクリート造", "大阪市", "梅田", "住友不動産", "シティタワー"]}/>
+						<TagListSection label="全てのタグ" className='mt-4' tags={["大阪市", "梅田", "住友不動産", "シティタワー", "ガーデン", "UR都市機構", "阪急阪神不動産", "ジオ", "ジオグランデ", "ジオタワー", "京都", "JR西日本", "ホテルグランヴィア", "JR西日本ホテルズ", "ブリリア", "東京建物", "森ビル", "東京", "新宿", "渋谷", "六本木", "虎ノ門", "赤坂", "病院", "ホテル", "外資系ホテル", "ヒルトン", "ウォルドーフ・アストリア", "コンラッド", "ダブルツリーbyヒルトン", "谷町", "天満橋", "大阪市北区", "大阪市中央区", "東京都港区", "大阪市淀川区", "阪急電鉄", "うめきた", "阪神電車", "近畿日本鉄道", "百貨店", "オフィスビル", "鉄筋鉄骨コンクリート造"]}/>
 					</div>
 				</div>
 			</main>
