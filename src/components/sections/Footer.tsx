@@ -27,7 +27,7 @@ function Footer(props: Props) {
 						<div className="mt-2 flex flex-col">
 
 							<Link href="/" className="text-gray-400 hover:underline">Top</Link>
-							<Link href="/map" className="text-gray-400 hover:underline">map</Link>
+							<Link href="/map" className="text-gray-400 hover:underline">Map</Link>
 							<Link href="/gallery" className="text-gray-400 hover:underline">Gallery</Link>
 						</div>
 					</div>
