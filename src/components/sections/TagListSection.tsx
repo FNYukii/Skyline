@@ -13,7 +13,7 @@ function TagListSection(props: Props) {
 
 			<div className="bg-gray-100 p-4">
 
-				<p>{props.label}</p>
+				<p className="font-bold">{props.label}</p>
 
 				<div className="mt-2 flex flex-wrap gap-x-2 gap-y-1">
 
