@@ -13,7 +13,8 @@ function getStaticProps() {
 	const fileNames = fs.readdirSync('posts')
 
 	// posts配列を生成
-	const posts = fileNames.map((fileName) => {
+	let posts: Post[] = []
+	fileNames.forEach(fileName => {
 
 		// ベース名(ファイル名から拡張子を除去したもの)
 		const baseName = fileName.replace(/\.md$/, '')
@@ -40,11 +41,15 @@ function getStaticProps() {
 			content: content
 		}
 
-		return post
+		posts.push(post)
 	})
 
 	// posts配列内の要素を並べ替え
 	posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
+
+	// 開発中はpostsの要素数が少ないのでかさ増し
+	posts = posts.concat(posts)
+	posts = posts.concat(posts)
 
 	// 生成したposts配列をHomeコンポーネントに渡す
 	return {
