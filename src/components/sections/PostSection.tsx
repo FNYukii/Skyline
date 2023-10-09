@@ -11,13 +11,14 @@ interface Props {
 
 function PostSection(props: Props) {
 
-	// 目次用のaタグ
+	// id付き要素へ遷移するaタグ
 	const anckerToId = ({ ...props }) => {
 		return (
 			<a href={`#${props.children}`}>{props.children}</a>
 		)
 	}
 
+	// ID付きのh2タグ
 	const h2WithId = ({ ...props }) => {
 		return (
 			<h2 id={props.children}>{props.children}</h2>
