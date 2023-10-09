@@ -9,11 +9,10 @@ interface Props {
 function TableOfContentsSection(props: Props) {
 
 	// id付き要素へ遷移するaタグ
-	const anckerToId = ({ ...props }) => {
+	function anckerToId({ ...props }) {
 		return (
 			<li>
 				<a href={`#${props.children}`}>{props.children}</a>
-
 			</li>
 		)
 	}
