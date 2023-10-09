@@ -15,11 +15,14 @@ function Page(props: Props) {
 				<title>{props.title ?? "Skyline"}</title>
 			</Head>
 
-			<Header />
+			<div>
 
-			{props.children}
+				<Header />
 
-			<Footer className="mt-16" />
+				{props.children}
+
+				<Footer className="mt-16" />
+			</div>
 		</>
 	)
 }

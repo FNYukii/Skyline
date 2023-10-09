@@ -1,20 +1,27 @@
 import Link from "next/link"
 
-function Header() {
+interface Props {
+	className?: string
+}
+
+function Header(props: Props) {
 
 	return (
 
-		<header className="bg-accent-color text-white">
+		<header className={props.className}>
 
-			<div className="py-2 flex justify-between items-center w-full lg:width-lg px-4 lg:px-0 mx-auto">
+			<div className="bg-accent-color text-white">
 
-				<Link href="/" className="text-4xl font-light">Skyline</Link>
+				<div className="py-2 flex justify-between items-center w-full lg:width-lg px-4 lg:px-0 mx-auto">
 
-				<div className="flex gap-8">
+					<Link href="/" className="text-4xl font-light">Skyline</Link>
 
-					<Link href="/" className="hover:underline">Top</Link>
-					<Link href="/map" className="hover:underline">Map</Link>
-					<Link href="/gallery" className="hover:underline">Gallery</Link>
+					<div className="flex gap-8">
+
+						<Link href="/" className="hover:underline">Top</Link>
+						<Link href="/map" className="hover:underline">Map</Link>
+						<Link href="/gallery" className="hover:underline">Gallery</Link>
+					</div>
 				</div>
 			</div>
 		</header>
