@@ -62,5 +62,5 @@
 }
 
 .post-table-of-contents a {
-	@apply hover:underline
+	@apply hover:underline text-gray-600
 }
