@@ -5,6 +5,8 @@ interface Props {
 
 	src: string
 	alt: string
+
+	aspectVideo?: boolean
 }
 
 function ImageModalButton(props: Props) {
@@ -28,7 +30,7 @@ function ImageModalButton(props: Props) {
 			<div className={props.className}>
 
 				<button onClick={() => setIsOpen(true)} className="hover:brightness-90 transition">
-					<img src={props.src} alt={props.alt} className="aspect-video object-cover" />
+					<img src={props.src} alt={props.alt} className={props.aspectVideo? "aspect-video object-cover" : ""} />
 				</button>
 			</div>
 
