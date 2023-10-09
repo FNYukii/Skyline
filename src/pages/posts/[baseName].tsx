@@ -45,7 +45,7 @@ function getStaticProps({ params }: any) {
 	// dataオフジェクトからtitle, tags, date, thumbnailプロパティの値を取り出す
 	const title: string = data.title
 	const tags: string[] = data.tags
-	const date: string = data.date
+	const createdAt: string = data.createdAt
 	const thumbnail: string = data.thumbnail
 
 	// ファイルのベース名をidとして、postオブジェクトを生成
@@ -53,7 +53,7 @@ function getStaticProps({ params }: any) {
 		id: baseName,
 		title: title,
 		tags: tags,
-		date: date,
+		createdAt: createdAt,
 		thumbnail: thumbnail,
 		content: content
 	}
