@@ -42,7 +42,11 @@
 }
 
 .markdown table {
-	@apply w-full mt-2
+	@apply w-full mt-2 table-fixed
+}
+
+.markdown table th:first-child {
+	@apply w-1/6
 }
 
 .markdown table tbody tr {
