@@ -79,21 +79,20 @@ function PostPage(props: Props) {
 
 			<main className="w-full lg:width-lg px-4 lg:px-0 mx-auto">
 
-				<div className="mt-12 flex">
+				<div className="flex">
 
-					<div className="w-2/3">
+					<div className="w-2/3 mt-12">
 
 						<PostSection post={props.post} />
 					</div>
 
-					<div className="w-1/3 pl-8">
+					<div className="w-1/3 mt-4 pl-8">
 
-						<TableOfContentsSection />
-						<TagListSection label={'関連タグ'} tags={props.post.tags} className='mt-4' />
+						<div className='sticky pt-8 top-0'>
 
-						<SearchSection className='mt-12' />
-						<TagListSection label="人気のタグ" className='mt-4' tags={["うめきた", "阪神電車", "近畿日本鉄道", "百貨店", "オフィスビル", "鉄筋鉄骨コンクリート造", "大阪市", "梅田", "住友不動産", "シティタワー"]} />
-						<TagListSection label="全てのタグ" className='mt-4' tags={["大阪市", "梅田", "住友不動産", "シティタワー", "ガーデン", "UR都市機構", "阪急阪神不動産", "ジオ", "ジオグランデ", "ジオタワー", "京都", "JR西日本", "ホテルグランヴィア", "JR西日本ホテルズ", "ブリリア", "東京建物", "森ビル", "東京", "新宿", "渋谷", "六本木", "虎ノ門", "赤坂", "病院", "ホテル", "外資系ホテル", "ヒルトン", "ウォルドーフ・アストリア", "コンラッド", "ダブルツリーbyヒルトン", "谷町", "天満橋", "大阪市北区", "大阪市中央区", "東京都港区", "大阪市淀川区", "阪急電鉄", "うめきた", "阪神電車", "近畿日本鉄道", "百貨店", "オフィスビル", "鉄筋鉄骨コンクリート造"]} />
+							<TableOfContentsSection />
+							<TagListSection label={'関連タグ'} tags={props.post.tags} className='mt-4' />
+						</div>
 					</div>
 				</div>
 			</main>

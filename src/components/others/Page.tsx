@@ -15,7 +15,7 @@ function Page(props: Props) {
 				<title>{props.title ?? "Skyline"}</title>
 			</Head>
 
-			<div>
+			<div className="relative">
 
 				<Header />
 
