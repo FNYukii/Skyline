@@ -29,34 +29,38 @@
 	}
 }
 
-.markdown h2 {
+.post-content h2 {
 	@apply text-xl font-bold mt-6
 }
 
-.markdown p {
+.post-content p {
 	@apply mt-2
 }
 
-.markdown img {
+.post-content img {
 	@apply mt-4
 }
 
-.markdown table {
+.post-content table {
 	@apply w-full mt-2 table-fixed
 }
 
-.markdown table th:first-child {
+.post-content table th:first-child {
 	@apply w-1/6
 }
 
-.markdown table tbody tr {
+.post-content table tbody tr {
 	@apply border-b
 }
 
-.markdown table tbody tr td {
+.post-content table tbody tr td {
 	@apply py-2
 }
 
-.markdown table tbody tr td:first-child {
+.post-content table tbody tr td:first-child {
 	@apply text-gray-500
+}
+
+.post-table-of-contents a {
+	@apply hover:underline
 }

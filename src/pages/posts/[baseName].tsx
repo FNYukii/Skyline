@@ -90,7 +90,7 @@ function PostPage(props: Props) {
 
 						<div className='sticky pt-8 top-0'>
 
-							<TableOfContentsSection />
+							<TableOfContentsSection content={props.post.content} />
 							<TagListSection label={'関連タグ'} tags={props.post.tags} className='mt-4' />
 						</div>
 					</div>

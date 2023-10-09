@@ -1,15 +1,19 @@
+import ReactMarkdown from "react-markdown"
+
 interface Props {
+	content: string
+
 	className?: string
 }
 
 function TableOfContentsSection(props: Props) {
 
-	const contents = [
-		"概要",
-		"最新鋭のオフィス",
-		"外資系ホテルが入居予定",
-		"計画詳細"
-	]
+	// id付き要素へ遷移するaタグ
+	const anckerToId = ({ ...props }) => {
+		return (
+			<a href={`#${props.children}`}>{props.children}</a>
+		)
+	}
 
 	return (
 
@@ -19,13 +23,12 @@ function TableOfContentsSection(props: Props) {
 
 				<p>目次</p>
 
-				<div className="mt-2 flex flex-col items-start gap-x-2 gap-y-1">
-
-					{contents.map((content, index) => (
-
-						<button key={index} className="text-gray-600 hover:underline">{`${index + 1}. ${content}`}</button>
-					))}
-				</div>
+				<ReactMarkdown
+					children={props.content}
+					allowedElements={['h2']} // h2要素のみを表示する
+					components={{ h2: anckerToId }} // h2要素をanckerToIdに置き換えて表示
+					className="post-table-of-contents"
+				/>
 			</div>
 		</div>
 	)
