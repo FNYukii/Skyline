@@ -12,7 +12,7 @@ interface Props {
 function PostSection(props: Props) {
 
 	// ID付きのh2タグ
-	const h2WithId = ({ ...props }) => {
+	function h2WithId({ ...props }) {
 		return (
 			<h2 id={props.children}>{props.children}</h2>
 		)
