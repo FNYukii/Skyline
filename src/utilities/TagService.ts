@@ -14,6 +14,11 @@ class TagService {
 		// 重複を排除
 		allTags = Array.from(new Set(allTags))
 
+		// あいうえお順に並び変える
+		allTags.sort((a, b) => {
+			return a.localeCompare(b, 'ja')
+		})
+
 		return allTags
 	}
 }
