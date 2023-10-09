@@ -3,6 +3,7 @@ import dayjs from "dayjs"
 import { AiOutlineEdit } from "react-icons/ai"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import ImageModalButton from "../others/ImageModalButton"
 
 interface Props {
 	className?: string
@@ -36,7 +37,7 @@ function PostSection(props: Props) {
 				</div>
 			</div>
 
-			<img src={props.post.thumbnail} alt={props.post.title} className="mt-4 aspect-video object-cover" />
+			<ImageModalButton className="mt-4" image={props.post.thumbnail} alt={props.post.title}/>
 
 			<ReactMarkdown
 				children={props.post.content}
