@@ -24,7 +24,7 @@ function TableOfContentsSection(props: Props) {
 
 			<div className="bg-gray-100 p-4">
 
-				<p>目次</p>
+				<p className="font-bold">目次</p>
 
 				<ol className="list-decimal list-inside text-gray-600">
 
