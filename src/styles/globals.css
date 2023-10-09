@@ -41,10 +41,6 @@
 	@apply mt-2
 }
 
-.post-content img {
-	@apply mt-4
-}
-
 .post-content table {
 	@apply w-full mt-2 table-fixed
 }

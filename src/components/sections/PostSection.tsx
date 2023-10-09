@@ -19,6 +19,12 @@ function PostSection(props: Props) {
 		)
 	}
 
+	function ImgExpandable({ ...props }) {
+		return (
+			<ImageModalButton src={props.src} alt={props.alt} className="mt-4"/>
+		)
+	}
+
 	return (
 
 		<div className={props.className}>
@@ -37,12 +43,12 @@ function PostSection(props: Props) {
 				</div>
 			</div>
 
-			<ImageModalButton className="mt-4" image={props.post.thumbnail} alt={props.post.title}/>
+			<ImageModalButton className="mt-4" src={props.post.thumbnail} alt={props.post.title}/>
 
 			<ReactMarkdown
 				children={props.post.content}
 				remarkPlugins={[remarkGfm]}
-				components={{ h2: h2WithId }} // h2要素をh2WithIdに置き換えて表示
+				components={{ h2: h2WithId, img: ImgExpandable }} // h2要素をh2WithIdに置き換えて表示
 				className="post-content"
 			/>
 		</div>
