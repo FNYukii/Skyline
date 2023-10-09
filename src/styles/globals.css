@@ -27,12 +27,16 @@
 	.bg-accent-color {
 		background-color: #292c34;
 	}
+}
 
-	.markdown h2 {
-		@apply text-xl font-bold mt-6
-	}
+.markdown h2 {
+	@apply text-xl font-bold mt-6
+}
 
-	.markdown p {
-		@apply mt-2
-	}
+.markdown p {
+	@apply mt-2
+}
+
+.markdown img {
+	@apply mt-4
 }
