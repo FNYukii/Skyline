@@ -36,10 +36,6 @@ function PostListSection(props: Props) {
 								<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
 							))}
 						</div>
-
-						<div>
-							<p className="text-gray-500">{dayjs(post.createdAt).format("YYYY年M月D日")}</p>
-						</div>
 					</div>
 				))}
 			</div>
