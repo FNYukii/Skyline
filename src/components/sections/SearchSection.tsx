@@ -20,8 +20,8 @@ function SearchSection(props: Props) {
 
 						<div className="mt-2 ml-4 flex items-center gap-2">
 
-							<AiOutlineSearch className="text-gray-400" />
-							<span className="text-gray-400">検索</span>
+							<AiOutlineSearch className="text-gray-600" />
+							<span className="text-gray-600">検索</span>
 						</div>
 					</div>
 				}
@@ -30,7 +30,7 @@ function SearchSection(props: Props) {
 					<div className="absolute w-full flex justify-end">
 
 						<button onClick={() => setKeyword("")} className="mt-1 mr-2 p-2 rounded-full hover:bg-gray-200 transition">
-							<AiOutlineClose className="text-gray-400" />
+							<AiOutlineClose className="text-gray-600" />
 						</button>
 					</div>
 				}
