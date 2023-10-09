@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 interface Props {
 	className?: string
 
-	image: string
+	src: string
 	alt: string
 }
 
@@ -28,7 +28,7 @@ function ImageModalButton(props: Props) {
 			<div className={props.className}>
 
 				<button onClick={() => setIsOpen(true)} className="hover:brightness-90 transition">
-					<img src={props.image} alt={props.alt} className="aspect-video object-cover" />
+					<img src={props.src} alt={props.alt} className="aspect-video object-cover" />
 				</button>
 			</div>
 
@@ -37,7 +37,7 @@ function ImageModalButton(props: Props) {
 
 					<div onClick={() => setIsOpen(false)} className="w-full h-full bg-black/50"></div>
 
-					<img src={props.image} alt={props.alt} className="absolute max-height-screen-95" />
+					<img src={props.src} alt={props.alt} className="absolute max-height-screen-95" />
 				</div>
 			}
 		</>
