@@ -3,7 +3,7 @@ type Post = {
 	id: string
 	title: string
 	tags: string[]
-	date: string
+	createdAt: string
 	thumbnail: string
 	content: string
 }

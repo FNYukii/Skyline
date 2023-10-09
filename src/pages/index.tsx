@@ -27,7 +27,7 @@ function getStaticProps() {
 		// dataオフジェクトからtitle, tags, date, thumbnailプロパティの値を取り出す
 		const title: string = data.title
 		const tags: string[] = data.tags
-		const date: string = data.date
+		const createdAt: string = data.createdAt
 		const thumbnail: string = data.thumbnail
 
 		// ファイルのベース名をidとして、postオブジェクトを生成
@@ -35,7 +35,7 @@ function getStaticProps() {
 			id: baseName,
 			title: title,
 			tags: tags,
-			date: date,
+			createdAt: createdAt,
 			thumbnail: thumbnail,
 			content: content
 		}
@@ -44,7 +44,7 @@ function getStaticProps() {
 	})
 
 	// posts配列内の要素を並べ替え
-	posts.sort((a, b) => dayjs(b.date).toDate().valueOf() - dayjs(a.date).toDate().valueOf())
+	posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
 
 	// 生成したposts配列をHomeコンポーネントに渡す
 	return {
