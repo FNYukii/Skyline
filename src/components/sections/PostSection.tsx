@@ -11,6 +11,13 @@ interface Props {
 
 function PostSection(props: Props) {
 
+	// ID付きのh2タグ
+	function h2WithId({ ...props }) {
+		return (
+			<h2 id={props.children}>{props.children}</h2>
+		)
+	}
+
 	return (
 
 		<div className={props.className}>
@@ -22,12 +29,21 @@ function PostSection(props: Props) {
 				<div className="flex gap-2 items-center">
 
 					<AiOutlineEdit className="text-gray-500 text-lg" />
-					<span className="text-gray-500">{dayjs(props.post.createdAt).format("YYYY年M月D日")}</span>
+
+					<span className="text-gray-500">
+						{dayjs(props.post.createdAt).format("YYYY年M月D日")}
+					</span>
 				</div>
 			</div>
+
 			<img src={props.post.thumbnail} alt={props.post.title} className="mt-4 aspect-video object-cover" />
 
-			<ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown">{props.post.content}</ReactMarkdown>
+			<ReactMarkdown
+				children={props.post.content}
+				remarkPlugins={[remarkGfm]}
+				components={{ h2: h2WithId }} // h2要素をh2WithIdに置き換えて表示
+				className="post-content"
+			/>
 		</div>
 	)
 }
