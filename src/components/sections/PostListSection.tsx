@@ -38,7 +38,7 @@ function PostListSection(props: Props) {
 						</div>
 
 						<div>
-							<p className="text-gray-500">{dayjs(post.date).format("YYYY年MM月DD日")}</p>
+							<p className="text-gray-500">{dayjs(post.date).format("YYYY年M月D日")}</p>
 						</div>
 					</div>
 				))}
