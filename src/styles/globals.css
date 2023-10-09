@@ -40,3 +40,23 @@
 .markdown img {
 	@apply mt-4
 }
+
+.markdown table {
+	@apply w-full mt-2 table-fixed
+}
+
+.markdown table th:first-child {
+	@apply w-1/6
+}
+
+.markdown table tbody tr {
+	@apply border-b
+}
+
+.markdown table tbody tr td {
+	@apply py-2
+}
+
+.markdown table tbody tr td:first-child {
+	@apply text-gray-500
+}

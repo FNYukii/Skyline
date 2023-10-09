@@ -2,6 +2,7 @@ import Post from "@/entities/Post"
 import dayjs from "dayjs"
 import { AiOutlineEdit } from "react-icons/ai"
 import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 
 interface Props {
 	className?: string
@@ -26,7 +27,7 @@ function PostSection(props: Props) {
 			</div>
 			<img src={props.post.thumbnail} alt={props.post.title} className="mt-4 aspect-video object-cover" />
 
-			<ReactMarkdown className="markdown">{props.post.content}</ReactMarkdown>
+			<ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown">{props.post.content}</ReactMarkdown>
 		</div>
 	)
 }
