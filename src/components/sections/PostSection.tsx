@@ -11,6 +11,19 @@ interface Props {
 
 function PostSection(props: Props) {
 
+	// 目次用のaタグ
+	const anckerToId = ({ ...props }) => {
+		return (
+			<a href={`#${props.children}`}>{props.children}</a>
+		)
+	}
+
+	const h2WithId = ({ ...props }) => {
+		return (
+			<h2 id={props.children}>{props.children}</h2>
+		)
+	}
+
 	return (
 
 		<div className={props.className}>
@@ -33,7 +46,15 @@ function PostSection(props: Props) {
 
 			<ReactMarkdown
 				children={props.post.content}
+				allowedElements={['h2']} // h2要素のみを表示する
+				components={{ h2: anckerToId }} // h2要素をanckerToIdに置き換えて表示
+				className="markdown"
+			/>
+
+			<ReactMarkdown
+				children={props.post.content}
 				remarkPlugins={[remarkGfm]}
+				components={{ h2: h2WithId }} // h2要素をh2WithIdに置き換えて表示
 				className="markdown"
 			/>
 		</div>
