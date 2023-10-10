@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown"
+import rehypeRaw from "rehype-raw"
 
 interface Props {
 	content: string
@@ -29,6 +30,7 @@ function TableOfContentsSection(props: Props) {
 
 					<ReactMarkdown
 						children={props.content}
+						rehypePlugins={[rehypeRaw]} // これが無いとhtmlタグがそのまま表示される
 						allowedElements={['h2']} // h2要素のみを表示する
 						components={{ h2: anckerToId }} // h2要素をanckerToIdに置き換えて表示
 						className="post-table-of-contents mt-2 flex flex-col gap-y-1"
