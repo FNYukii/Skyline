@@ -24,7 +24,7 @@ function PostSection(props: Props) {
 	function ImgExpandable({ ...props }) {
 		return (
 			<button onClick={() => setOpenImage(props.src)} className="mt-4 hover:brightness-90 transition w-fit">
-				<img src={props.src} alt={props.alt} className="aspect-video object-cover"/>
+				<img src={props.src} alt={props.alt} className="h-full object-cover"/>
 			</button>
 		)
 	}
