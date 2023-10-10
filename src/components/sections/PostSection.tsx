@@ -4,6 +4,7 @@ import { AiOutlineEdit } from "react-icons/ai"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { useEffect, useState } from "react"
+import rehypeRaw from "rehype-raw"
 
 interface Props {
 	className?: string
@@ -22,8 +23,8 @@ function PostSection(props: Props) {
 	// モーダルを開くbuttonタグに入ったimgタグ
 	function ImgExpandable({ ...props }) {
 		return (
-			<button onClick={() => setOpenImage(props.src)} className="mt-4 hover:brightness-90 transition">
-				<img src={props.src} alt={props.alt} />
+			<button onClick={() => setOpenImage(props.src)} className="mt-4 hover:brightness-90 transition w-fit">
+				<img src={props.src} alt={props.alt} className="aspect-video object-cover"/>
 			</button>
 		)
 	}
@@ -68,6 +69,7 @@ function PostSection(props: Props) {
 			<ReactMarkdown
 				children={props.post.content}
 				remarkPlugins={[remarkGfm]}
+				rehypePlugins={[rehypeRaw]}
 				components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
 				className="post-content"
 			/>
