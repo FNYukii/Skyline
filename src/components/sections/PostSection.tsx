@@ -23,7 +23,7 @@ function PostSection(props: Props) {
 	// モーダルを開くbuttonタグに入ったimgタグ
 	function ImgExpandable({ ...props }) {
 		return (
-			<button onClick={() => setOpenImage(props.src)} className="mt-4 hover:brightness-90 transition w-fit">
+			<button onClick={() => setOpenImage(props.src)} className="mt-2 hover:brightness-90 transition w-fit">
 				<img src={props.src} alt={props.alt} className="h-full object-cover"/>
 			</button>
 		)
