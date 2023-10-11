@@ -26,6 +26,27 @@ function ImageModal(props: Props) {
 		}
 	}, [props.image])
 
+	// Escキーでモーダルを閉じる関数
+	const onKeyDown = (event: KeyboardEvent) => {
+
+		if (event.key === "Escape") {
+			props.setImage(null)
+		}
+	}
+
+	// キーイベントと関数を設定
+	useEffect(() => {
+
+		document.addEventListener("keydown", onKeyDown, false)
+		document.body.style.overflowY = "hidden"
+
+		return () => {
+			document.removeEventListener("keydown", onKeyDown, false)
+			document.body.style.overflowY = ""
+		}
+		// eslint-disable-next-line
+	}, [])
+
 	return (
 		<div>
 

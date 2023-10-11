@@ -3,7 +3,7 @@ import dayjs from "dayjs"
 import { AiOutlineEdit } from "react-icons/ai"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import rehypeRaw from "rehype-raw"
 import Link from "next/link"
 import ImageModal from "../others/ImageModal"
@@ -15,6 +15,9 @@ interface Props {
 
 function PostSection(props: Props) {
 
+	// モーダル展開する画像
+	const [openImage, setOpenImage] = useState<{ src: string, alt: string } | null>(null)
+
 	// ID付きのh2タグ
 	function h2WithId({ ...props }) {
 		return (
@@ -25,14 +28,11 @@ function PostSection(props: Props) {
 	// モーダルを開くbuttonタグに入ったimgタグ
 	function ImgExpandable({ ...props }) {
 		return (
-			<button onClick={() => setOpenImage(props.src)} className="mt-2 hover:brightness-90 transition w-fit">
+			<button onClick={() => setOpenImage({ src: props.src, alt: props.alt })} className="mt-2 hover:brightness-90 transition w-fit">
 				<img src={props.src} alt={props.alt} className="h-full object-cover" />
 			</button>
 		)
 	}
-
-	// モーダル展開する画像
-	const [openImage, setOpenImage] = useState<{src: string, alt: string} | null>(null)
 
 	return (
 
@@ -52,7 +52,7 @@ function PostSection(props: Props) {
 				</div>
 			</div>
 
-			<button onClick={() => setOpenImage({src: props.post.thumbnail, alt: props.post.title})} className="mt-4 hover:brightness-90 transition">
+			<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="mt-4 hover:brightness-90 transition">
 				<img src={props.post.thumbnail} alt={props.post.title} className="aspect-video object-cover" />
 			</button>
 
@@ -64,7 +64,7 @@ function PostSection(props: Props) {
 				className="post-content"
 			/>
 
-			<ImageModal image={openImage} setImage={setOpenImage}/>
+			<ImageModal image={openImage} setImage={setOpenImage} />
 
 			<div className="mt-20 flex justify-center">
 				<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
