@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from "react"
+import { MdOutlineClose } from "react-icons/md"
 
 interface Props {
 	image: {
@@ -57,9 +58,12 @@ function ImageModal(props: Props) {
 					<div onClick={() => props.setImage(null)} className="w-full h-full bg-black/50"></div>
 
 					<div className="absolute px-4">
-
 						<img src={props.image.src} alt={props.image.alt} className="max-height-screen-95" />
 					</div>
+
+					<button onClick={() => props.setImage(null)} className="absolute top-0 left-0 m-3 p-3 rounded-full bg-black/10 hover:bg-white/20 transition">
+						<MdOutlineClose className="text-2xl text-white" />
+					</button>
 				</div>
 			}
 		</div>
