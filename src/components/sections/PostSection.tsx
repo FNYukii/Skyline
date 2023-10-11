@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm"
 import { useEffect, useState } from "react"
 import rehypeRaw from "rehype-raw"
 import Link from "next/link"
+import ImageModal from "../others/ImageModal"
 
 interface Props {
 	className?: string
@@ -30,20 +31,8 @@ function PostSection(props: Props) {
 		)
 	}
 
-	// 画像モーダル用フラグ
-	const [openImage, setOpenImage] = useState("")
-
-	// 画像モーダル展開中はスクロール禁止
-	useEffect(() => {
-
-		if (openImage !== "") {
-			document.body.style.overflow = "hidden"
-		}
-
-		if (openImage === "") {
-			document.body.style.overflow = "auto"
-		}
-	}, [openImage])
+	// モーダル展開する画像
+	const [openImage, setOpenImage] = useState<{src: string, alt: string} | null>(null)
 
 	return (
 
@@ -63,7 +52,7 @@ function PostSection(props: Props) {
 				</div>
 			</div>
 
-			<button onClick={() => setOpenImage(props.post.thumbnail)} className="mt-4 hover:brightness-90 transition">
+			<button onClick={() => setOpenImage({src: props.post.thumbnail, alt: props.post.title})} className="mt-4 hover:brightness-90 transition">
 				<img src={props.post.thumbnail} alt={props.post.title} className="aspect-video object-cover" />
 			</button>
 
@@ -75,14 +64,7 @@ function PostSection(props: Props) {
 				className="post-content"
 			/>
 
-			{openImage !== "" &&
-				<div className="z-30 fixed top-0 left-0 w-full h-full flex justify-center items-center">
-
-					<div onClick={() => setOpenImage("")} className="w-full h-full bg-black/50"></div>
-
-					<img src={openImage} alt={"---"} className="absolute max-height-screen-95" />
-				</div>
-			}
+			<ImageModal image={openImage} setImage={setOpenImage}/>
 
 			<div className="mt-20 flex justify-center">
 				<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
