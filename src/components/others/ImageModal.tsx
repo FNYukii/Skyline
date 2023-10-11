@@ -56,7 +56,10 @@ function ImageModal(props: Props) {
 
 					<div onClick={() => props.setImage(null)} className="w-full h-full bg-black/50"></div>
 
-					<img src={props.image.src} alt={props.image.alt} className="absolute max-height-screen-95" />
+					<div className="absolute px-4">
+
+						<img src={props.image.src} alt={props.image.alt} className="max-height-screen-95" />
+					</div>
 				</div>
 			}
 		</div>
