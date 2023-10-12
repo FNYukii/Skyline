@@ -39,11 +39,10 @@ function ImageModal(props: Props) {
 	useEffect(() => {
 
 		document.addEventListener("keydown", onKeyDown, false)
-		document.body.style.overflowY = "hidden"
 
 		return () => {
 			document.removeEventListener("keydown", onKeyDown, false)
-			document.body.style.overflowY = ""
+			document.body.style.overflow = "auto"
 		}
 		// eslint-disable-next-line
 	}, [])
