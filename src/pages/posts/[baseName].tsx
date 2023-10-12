@@ -1,4 +1,5 @@
 import Page from '@/components/others/Page'
+import MapSection from '@/components/sections/MapSection'
 import PostSection from '@/components/sections/PostSection'
 import SearchSection from '@/components/sections/SearchSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
@@ -84,6 +85,8 @@ function PostPage(props: Props) {
 					<div className="w-2/3 mt-12">
 
 						<PostSection post={props.post} />
+
+						<MapSection className='mt-8 w-full'/>
 					</div>
 
 					<div className="w-1/3 mt-4 pl-8">
@@ -96,7 +99,6 @@ function PostPage(props: Props) {
 					</div>
 				</div>
 			</main>
-
 		</Page>
 	)
 }
