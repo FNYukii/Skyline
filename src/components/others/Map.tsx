@@ -13,9 +13,13 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow.src,
 });
 
-function Map() {
+interface Props {
+	location: number[]
+}
 
-	const location: LatLngTuple = [34.70424657762377, 135.49483755939468]
+function Map(props: Props) {
+
+	const location: LatLngTuple = [props.location.at(0)!, props.location.at(1)!]
 
 	return (
 

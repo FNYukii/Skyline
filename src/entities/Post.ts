@@ -5,6 +5,7 @@ type Post = {
 	tags: string[]
 	createdAt: string
 	thumbnail: string
+	location: number[] | null
 	content: string
 }
 
