@@ -7,6 +7,7 @@ import TagListSection from '@/components/sections/TagListSection'
 import Post from '@/entities/Post'
 import fs from 'fs'
 import matter from 'gray-matter'
+import Link from 'next/link'
 
 function getStaticPaths() {
 
@@ -86,7 +87,11 @@ function PostPage(props: Props) {
 
 						<PostSection post={props.post} />
 
-						<MapSection className='mt-8 w-full'/>
+						<MapSection className='mt-6' />
+
+						<div className="mt-20 flex justify-center">
+							<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
+						</div>
 					</div>
 
 					<div className="w-1/3 mt-4 pl-8">
