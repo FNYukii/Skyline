@@ -15,7 +15,7 @@ L.Icon.Default.mergeOptions({
 
 function Map() {
 
-	const location: LatLngTuple = [34.7042545,135.4921653]
+	const location: LatLngTuple = [34.70424657762377, 135.49483755939468]
 
 	return (
 
