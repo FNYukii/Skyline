@@ -21,7 +21,7 @@ function Page(props: Props) {
 
 				{props.children}
 
-				<Footer className="mt-16" />
+				<Footer className="mt-24" />
 			</div>
 		</>
 	)

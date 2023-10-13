@@ -68,10 +68,10 @@ function PostPage(props: Props) {
 						<PostSection post={props.post} />
 
 						{props.post.location !== null &&
-							<MapSection className='mt-6' location={props.post.location} />
+							<MapSection className='mt-12' location={props.post.location} />
 						}
 
-						<div className="mt-20 flex justify-center">
+						<div className="mt-16 flex justify-center">
 							<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
 						</div>
 					</div>

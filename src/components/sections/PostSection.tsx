@@ -52,7 +52,7 @@ function PostSection(props: Props) {
 				</div>
 			</div>
 
-			<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="mt-4 hover:brightness-90 transition">
+			<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="mt-2 hover:brightness-90 transition">
 				<img src={props.post.thumbnail} alt={props.post.title} className="aspect-video object-cover" />
 			</button>
 
