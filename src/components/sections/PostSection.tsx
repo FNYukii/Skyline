@@ -5,7 +5,6 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { useState } from "react"
 import rehypeRaw from "rehype-raw"
-import Link from "next/link"
 import ImageModal from "../others/ImageModal"
 
 interface Props {

@@ -1,5 +1,4 @@
 import Post from "@/entities/Post"
-import dayjs from "dayjs"
 import Link from "next/link"
 
 interface Props {

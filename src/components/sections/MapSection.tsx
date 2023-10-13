@@ -1,6 +1,5 @@
 import React from 'react'
-import dynamic from 'next/dynamic';
-import { LatLngTuple } from 'leaflet';
+import dynamic from 'next/dynamic'
 
 interface Props {
 	className?: string
