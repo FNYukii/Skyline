@@ -1,14 +1,27 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import React from 'react'
 import "leaflet/dist/leaflet.css"
 
+// マーカー表示を修正
+import L, { LatLngTuple } from "leaflet";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon.src,
+  iconRetinaUrl: markerIcon2x.src,
+  shadowUrl: markerShadow.src,
+});
+
 function Map() {
+
+	const location: LatLngTuple = [34.7042545,135.4921653]
 
 	return (
 
 		<MapContainer
-			center={[34.7042545, 135.4921653]}
-			zoom={13}
+			center={location}
+			zoom={16}
 			scrollWheelZoom={false}
 			style={{ height: "100%", width: "100%" }}
 		>
@@ -18,7 +31,7 @@ function Map() {
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 			/>
 
-			<Marker position={[51.505, -0.09]}>
+			<Marker position={location}>
 
 				<Popup>
 					A pretty CSS3 popup. <br /> Easily customizable.
