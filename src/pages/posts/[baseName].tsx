@@ -1,5 +1,5 @@
 import Page from '@/components/others/Page'
-import MapSection from '@/components/sections/MapSection'
+import MapLoader from '@/components/others/MapWrapper'
 import PostSection from '@/components/sections/PostSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
@@ -66,11 +66,7 @@ function PostPage(props: Props) {
 					<div className="w-2/3 mt-12">
 
 						<PostSection post={props.post} />
-
-						{props.post.location !== null &&
-							<MapSection className='mt-12' location={props.post.location} />
-						}
-
+						
 						<div className="mt-16 flex justify-center">
 							<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
 						</div>

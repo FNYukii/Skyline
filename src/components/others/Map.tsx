@@ -28,6 +28,7 @@ function Map(props: Props) {
 			zoom={16}
 			scrollWheelZoom={false}
 			style={{ height: "100%", width: "100%" }}
+			className='aspect-video border'
 		>
 
 			<TileLayer

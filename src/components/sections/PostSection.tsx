@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm"
 import { useState } from "react"
 import rehypeRaw from "rehype-raw"
 import ImageModal from "../others/ImageModal"
+import MapLoader from "../others/MapWrapper"
 
 interface Props {
 	className?: string
@@ -34,7 +35,6 @@ function PostSection(props: Props) {
 	}
 
 	return (
-
 		<div className={props.className}>
 
 			<div className="flex justify-between">
@@ -60,6 +60,13 @@ function PostSection(props: Props) {
 			/>
 
 			<ImageModal image={openImage} setImage={setOpenImage} />
+
+			{props.post.location !== null &&
+				<div className="mt-12">
+					<h2 className="font-bold text-xl">マップ</h2>
+					<MapLoader location={props.post.location} />
+				</div>
+			}
 		</div>
 	)
 }
