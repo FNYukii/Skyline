@@ -15,6 +15,7 @@ L.Icon.Default.mergeOptions({
 
 interface Props {
 	location: number[]
+	className?: string
 }
 
 function Map(props: Props) {
@@ -28,7 +29,7 @@ function Map(props: Props) {
 			zoom={16}
 			scrollWheelZoom={false}
 			style={{ height: "100%", width: "100%" }}
-			className='aspect-video border'
+			className={props.className}
 		>
 
 			<TileLayer

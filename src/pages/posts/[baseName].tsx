@@ -1,5 +1,5 @@
 import Page from '@/components/others/Page'
-import MapLoader from '@/components/others/MapWrapper'
+import DynamicMap from '@/components/others/DynamicMap'
 import PostSection from '@/components/sections/PostSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
