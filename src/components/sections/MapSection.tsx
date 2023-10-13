@@ -1,8 +1,11 @@
 import React from 'react'
 import dynamic from 'next/dynamic';
+import { LatLngTuple } from 'leaflet';
 
 interface Props {
 	className?: string
+
+	location: number[]
 }
 
 function MapSection(props: Props) {
@@ -16,7 +19,7 @@ function MapSection(props: Props) {
 
 			<h2 className='text-xl font-bold'>マップ</h2>
 			<div className='mt-2 aspect-video border'>
-				<DynamicMap />
+				<DynamicMap location={props.location} />
 			</div>
 		</div>
 	)

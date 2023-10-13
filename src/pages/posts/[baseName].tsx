@@ -1,13 +1,11 @@
 import Page from '@/components/others/Page'
 import MapSection from '@/components/sections/MapSection'
 import PostSection from '@/components/sections/PostSection'
-import SearchSection from '@/components/sections/SearchSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
 import Post from '@/entities/Post'
 import PostService from '@/utilities/PostService'
 import fs from 'fs'
-import matter from 'gray-matter'
 import Link from 'next/link'
 
 function getStaticPaths() {
@@ -69,7 +67,9 @@ function PostPage(props: Props) {
 
 						<PostSection post={props.post} />
 
-						<MapSection className='mt-6' />
+						{props.post.location !== null &&
+							<MapSection className='mt-6' location={props.post.location} />
+						}
 
 						<div className="mt-20 flex justify-center">
 							<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>

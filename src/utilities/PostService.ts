@@ -18,6 +18,7 @@ class PostService {
 		const tags: string[] = data.tags
 		const createdAt: string = data.createdAt
 		const thumbnail: string = data.thumbnail
+		const location: number[] | null = data.location ?? null
 
 		// ファイルのベース名をidとして、postオブジェクトを生成
 		const post: Post = {
@@ -26,6 +27,7 @@ class PostService {
 			tags: tags,
 			createdAt: createdAt,
 			thumbnail: thumbnail,
+			location: location,
 			content: content
 		}
 
