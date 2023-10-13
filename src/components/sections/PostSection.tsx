@@ -38,13 +38,9 @@ function PostSection(props: Props) {
 		<div className={props.className}>
 
 			<div className="flex justify-between">
-
 				<h1 className="text-2xl font-bold">{props.post.title}</h1>
-
 				<div className="flex gap-2 items-center">
-
 					<AiOutlineEdit className="text-gray-500 text-lg" />
-
 					<span className="text-gray-500">
 						{dayjs(props.post.createdAt).format("YYYY年M月D日")}
 					</span>
