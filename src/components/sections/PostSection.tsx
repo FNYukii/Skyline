@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm"
 import { useState } from "react"
 import rehypeRaw from "rehype-raw"
 import ImageModal from "../others/ImageModal"
-import MapLoader from "../others/MapWrapper"
+import DynamicMap from "../others/DynamicMap"
 
 interface Props {
 	className?: string
@@ -64,7 +64,7 @@ function PostSection(props: Props) {
 			{props.post.location !== null &&
 				<div className="mt-12">
 					<h2 className="font-bold text-xl">マップ</h2>
-					<MapLoader location={props.post.location} />
+					<DynamicMap location={props.post.location} className="mt-2 aspect-video border" />
 				</div>
 			}
 		</div>
