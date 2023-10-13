@@ -15,7 +15,7 @@ function MapSection(props: Props) {
 		<div className={props.className}>
 
 			<h2 className='text-xl font-bold'>マップ</h2>
-			<div className='mt-2 aspect-video overflow-hidden border'>
+			<div className='mt-2 aspect-video border'>
 				<DynamicMap />
 			</div>
 		</div>
