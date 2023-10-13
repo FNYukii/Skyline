@@ -5,8 +5,8 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { useState } from "react"
 import rehypeRaw from "rehype-raw"
-import Link from "next/link"
 import ImageModal from "../others/ImageModal"
+import MapLoader from "../others/MapWrapper"
 
 interface Props {
 	className?: string
@@ -35,24 +35,19 @@ function PostSection(props: Props) {
 	}
 
 	return (
-
 		<div className={props.className}>
 
 			<div className="flex justify-between">
-
 				<h1 className="text-2xl font-bold">{props.post.title}</h1>
-
 				<div className="flex gap-2 items-center">
-
 					<AiOutlineEdit className="text-gray-500 text-lg" />
-
 					<span className="text-gray-500">
 						{dayjs(props.post.createdAt).format("YYYY年M月D日")}
 					</span>
 				</div>
 			</div>
 
-			<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="mt-4 hover:brightness-90 transition">
+			<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="mt-2 hover:brightness-90 transition">
 				<img src={props.post.thumbnail} alt={props.post.title} className="aspect-video object-cover" />
 			</button>
 
@@ -66,9 +61,12 @@ function PostSection(props: Props) {
 
 			<ImageModal image={openImage} setImage={setOpenImage} />
 
-			<div className="mt-20 flex justify-center">
-				<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
-			</div>
+			{props.post.location !== null &&
+				<div className="mt-12">
+					<h2 className="font-bold text-xl">マップ</h2>
+					<MapLoader location={props.post.location} />
+				</div>
+			}
 		</div>
 	)
 }

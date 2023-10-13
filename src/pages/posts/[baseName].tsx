@@ -1,11 +1,12 @@
 import Page from '@/components/others/Page'
+import MapLoader from '@/components/others/MapWrapper'
 import PostSection from '@/components/sections/PostSection'
-import SearchSection from '@/components/sections/SearchSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
 import Post from '@/entities/Post'
+import PostService from '@/utilities/PostService'
 import fs from 'fs'
-import matter from 'gray-matter'
+import Link from 'next/link'
 
 function getStaticPaths() {
 
@@ -36,27 +37,8 @@ function getStaticProps({ params }: any) {
 	// 表示する記事のmdファイルのベース名を取得
 	const baseName = params.baseName
 
-	// ファイル内のテキストを取り出す
-	const textInFile = fs.readFileSync(`posts/${baseName}.md`, 'utf-8')
-
-	// ファイル内のテキストをdataとContentに分離
-	const { data, content } = matter(textInFile)
-
-	// dataオフジェクトからtitle, tags, date, thumbnailプロパティの値を取り出す
-	const title: string = data.title
-	const tags: string[] = data.tags
-	const createdAt: string = data.createdAt
-	const thumbnail: string = data.thumbnail
-
-	// ファイルのベース名をidとして、postオブジェクトを生成
-	const post: Post = {
-		id: baseName,
-		title: title,
-		tags: tags,
-		createdAt: createdAt,
-		thumbnail: thumbnail,
-		content: content
-	}
+	// ファイル名を元にPostを生成
+	const post = PostService.postFromBaseName(baseName)
 
 	// PostPageコンポーネントに渡す
 	return {
@@ -84,6 +66,10 @@ function PostPage(props: Props) {
 					<div className="w-2/3 mt-12">
 
 						<PostSection post={props.post} />
+						
+						<div className="mt-16 flex justify-center">
+							<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
+						</div>
 					</div>
 
 					<div className="w-1/3 mt-4 pl-8">
@@ -96,7 +82,6 @@ function PostPage(props: Props) {
 					</div>
 				</div>
 			</main>
-
 		</Page>
 	)
 }

@@ -2,11 +2,11 @@ import Page from "@/components/others/Page"
 import PostListSection from "@/components/sections/PostListSection"
 import SearchSection from "@/components/sections/SearchSection"
 import fs from 'fs'
-import matter from 'gray-matter'
 import Post from "@/entities/Post"
 import dayjs from "dayjs"
 import TagListSection from "@/components/sections/TagListSection"
 import TagService from "@/utilities/TagService"
+import PostService from "@/utilities/PostService"
 
 function getStaticProps() {
 
@@ -20,28 +20,8 @@ function getStaticProps() {
 		// ベース名(ファイル名から拡張子を除去したもの)
 		const baseName = fileName.replace(/\.md$/, '')
 
-		// ファイル内のテキスト
-		const textInFile = fs.readFileSync(`posts/${fileName}`, 'utf-8')
-
-		// ファイル内のテキストをdataとContentに分離
-		const { data, content } = matter(textInFile)
-
-		// dataオフジェクトからtitle, tags, date, thumbnailプロパティの値を取り出す
-		const title: string = data.title
-		const tags: string[] = data.tags
-		const createdAt: string = data.createdAt
-		const thumbnail: string = data.thumbnail
-
-		// ファイルのベース名をidとして、postオブジェクトを生成
-		const post: Post = {
-			id: baseName,
-			title: title,
-			tags: tags,
-			createdAt: createdAt,
-			thumbnail: thumbnail,
-			content: content
-		}
-
+		// ベース名を元にPostを生成
+		const post = PostService.postFromBaseName(baseName)
 		posts.push(post)
 	})
 

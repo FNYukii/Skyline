@@ -12,7 +12,7 @@ function TableOfContentsSection(props: Props) {
 	// id付き要素へ遷移するaタグ
 	function anckerToId({ ...props }) {
 		return (
-			<li>
+			<li className="overflow-hidden text-ellipsis whitespace-nowrap">
 				<a href={`#${props.children}`}>{props.children}</a>
 			</li>
 		)
