@@ -6,7 +6,6 @@ import remarkGfm from "remark-gfm"
 import { useState } from "react"
 import rehypeRaw from "rehype-raw"
 import ImageModal from "../others/ImageModal"
-import DynamicMap from "../others/DynamicMap"
 
 interface Props {
 	className?: string
@@ -64,7 +63,14 @@ function PostSection(props: Props) {
 			{props.post.location !== null &&
 				<div className="mt-12">
 					<h2 className="font-bold text-xl">マップ</h2>
-					<DynamicMap location={props.post.location} className="mt-2 aspect-video border" />
+					<iframe
+						src={`https://maps.google.co.jp/maps?output=embed&q=${props.post.location.at(0)}, ${props.post.location.at(1)}`}
+						height="450"
+						loading="lazy"
+						referrerPolicy="no-referrer-when-downgrade"
+						title='GoogleMap'
+						className='mt-2 border w-full aspect-video bg-gray-100'
+					/>
 				</div>
 			}
 		</div>
