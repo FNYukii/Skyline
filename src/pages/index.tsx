@@ -25,14 +25,19 @@ function getStaticProps() {
 		posts.push(post)
 	})
 
-	// posts配列内の要素を並べ替え
+	// postsを新しい順に並べ替え
 	posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
 
+	// TODO: 追加読み込み機能が実装できたら、以下のコードを削除
 	// 開発中はpostsの要素数が少ないのでかさ増し
 	posts = posts.concat(posts)
 	posts = posts.concat(posts)
+	posts = posts.concat(posts)
 
-	// 生成したposts配列をHomeコンポーネントに渡す
+	// 最新の10件だけ残す
+	posts.length = 10
+
+	// postsをHomeコンポーネントに渡す
 	return {
 		props: {
 			posts,
