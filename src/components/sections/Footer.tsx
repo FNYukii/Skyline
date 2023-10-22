@@ -10,7 +10,7 @@ function Footer(props: Props) {
 
 		<footer className={props.className}>
 
-			<div className="bg-accent-color text-white pt-4 pb-4">
+			<div className="bg-accent-color text-white pt-8 pb-4">
 
 				<div className="w-full lg:width-lg px-4 lg:px-0 mx-auto">
 

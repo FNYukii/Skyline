@@ -25,15 +25,17 @@ function PostListSection(props: Props) {
 							</Link>
 						</div>
 
-						<div className="mt-2">
+						<div className="p-3 bg-white">
+
 							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.title}</Link>
-						</div>
 
-						<div className="overflow-hidden text-ellipsis whitespace-nowrap">
-							{post.tags.map((tag, index) => (
 
-								<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
-							))}
+							<div className="overflow-hidden text-ellipsis whitespace-nowrap">
+								{post.tags.map((tag, index) => (
+
+									<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
+								))}
+							</div>
 						</div>
 					</div>
 				))}
@@ -41,7 +43,7 @@ function PostListSection(props: Props) {
 
 			<div className="flex justify-center">
 
-				<button className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">もっと見る</button>
+				<button className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-200 transition">もっと見る</button>
 			</div>
 		</div>
 	)
