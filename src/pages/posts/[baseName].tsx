@@ -1,5 +1,4 @@
 import Page from '@/components/others/Page'
-import DynamicMap from '@/components/others/DynamicMap'
 import PostSection from '@/components/sections/PostSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
@@ -66,10 +65,6 @@ function PostPage(props: Props) {
 					<div className="w-2/3 mt-12">
 
 						<PostSection post={props.post} />
-						
-						<div className="mt-16 flex justify-center">
-							<Link href="/" className="py-2 px-24 border border-gray-300 hover:bg-gray-100 transition">トップへ戻る</Link>
-						</div>
 					</div>
 
 					<div className="w-1/3 mt-4 pl-8">

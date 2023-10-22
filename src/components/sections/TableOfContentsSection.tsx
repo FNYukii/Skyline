@@ -22,11 +22,11 @@ function TableOfContentsSection(props: Props) {
 
 		<div className={props.className}>
 
-			<div className="bg-gray-100 p-4">
+			<div className="bg-white p-4">
 
 				<p className="font-bold">目次</p>
 
-				<ol className="list-decimal list-inside text-gray-600">
+				<ol className="list-decimal list-inside text-gray-500">
 
 					<ReactMarkdown
 						children={props.content}

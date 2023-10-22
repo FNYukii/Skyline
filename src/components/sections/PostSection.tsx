@@ -36,43 +36,53 @@ function PostSection(props: Props) {
 	return (
 		<div className={props.className}>
 
-			<div className="flex justify-between">
-				<h1 className="text-2xl font-bold">{props.post.title}</h1>
-				<div className="flex gap-2 items-center">
-					<AiOutlineEdit className="text-gray-500 text-lg" />
-					<span className="text-gray-500">
-						{dayjs(props.post.createdAt).format("YYYY年M月D日")}
-					</span>
+			<div>
+
+				<div className="flex">
+					<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="hover:brightness-90 transition">
+						<img src={props.post.thumbnail} alt={props.post.title} className="aspect-video object-cover" />
+					</button>
+				</div>
+
+				<div className="pt-4 pb-8 px-8 bg-white">
+
+					<div className="flex justify-between">
+
+						<h1 className="text-2xl font-bold">{props.post.title}</h1>
+
+						<div className="flex gap-2 items-center">
+							<AiOutlineEdit className="text-gray-500 text-lg" />
+							<span className="text-gray-500">
+								{dayjs(props.post.createdAt).format("YYYY年M月D日")}
+							</span>
+						</div>
+					</div>
+
+					<ReactMarkdown
+						children={props.post.content}
+						remarkPlugins={[remarkGfm]}
+						rehypePlugins={[rehypeRaw]}
+						components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
+						className="post-content"
+					/>
+
+					<ImageModal image={openImage} setImage={setOpenImage} />
+
+					{props.post.location !== null &&
+						<div className="mt-12">
+							<h2 className="font-bold text-xl">マップ</h2>
+							<iframe
+								src={`https://maps.google.co.jp/maps?output=embed&q=${props.post.location.at(0)}, ${props.post.location.at(1)}`}
+								height="450"
+								loading="lazy"
+								referrerPolicy="no-referrer-when-downgrade"
+								title='GoogleMap'
+								className='mt-2 border border-gray-100 w-full aspect-video bg-gray-100'
+							/>
+						</div>
+					}
 				</div>
 			</div>
-
-			<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="mt-2 hover:brightness-90 transition">
-				<img src={props.post.thumbnail} alt={props.post.title} className="aspect-video object-cover" />
-			</button>
-
-			<ReactMarkdown
-				children={props.post.content}
-				remarkPlugins={[remarkGfm]}
-				rehypePlugins={[rehypeRaw]}
-				components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
-				className="post-content"
-			/>
-
-			<ImageModal image={openImage} setImage={setOpenImage} />
-
-			{props.post.location !== null &&
-				<div className="mt-12">
-					<h2 className="font-bold text-xl">マップ</h2>
-					<iframe
-						src={`https://maps.google.co.jp/maps?output=embed&q=${props.post.location.at(0)}, ${props.post.location.at(1)}`}
-						height="450"
-						loading="lazy"
-						referrerPolicy="no-referrer-when-downgrade"
-						title='GoogleMap'
-						className='mt-2 border w-full aspect-video bg-gray-100'
-					/>
-				</div>
-			}
 		</div>
 	)
 }

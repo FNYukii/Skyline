@@ -11,7 +11,7 @@ function TagListSection(props: Props) {
 
 		<div className={props.className}>
 
-			<div className="bg-gray-100 p-4">
+			<div className="bg-white p-4">
 
 				<p className="font-bold">{props.label}</p>
 
@@ -19,7 +19,7 @@ function TagListSection(props: Props) {
 
 					{props.tags.map((tag, index) => (
 
-						<button key={index} className="text-gray-600 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</button>
+						<button key={index} className="text-gray-500 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</button>
 					))}
 				</div>
 			</div>
