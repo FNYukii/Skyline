@@ -25,7 +25,7 @@ function PostListSection(props: Props) {
 							</Link>
 						</div>
 
-						<div className="p-3 bg-white">
+						<div className="p-4 bg-white">
 
 							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.title}</Link>
 
