@@ -19,7 +19,9 @@ function Page(props: Props) {
 
 				<Header />
 
-				{props.children}
+				<main className="lg:w-[1024px] px-4 lg:px-0 mx-auto">
+					{props.children}
+				</main>
 
 				<Footer className="mt-24" />
 			</div>

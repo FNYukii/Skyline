@@ -56,24 +56,21 @@ function Home(props: Props) {
 
 		<Page>
 
-			<main className="w-full lg:width-lg px-4 lg:px-0 mx-auto">
+			<div className="flex">
 
-				<div className="flex">
+				<div className="w-2/3 mt-12">
+					<PostListSection posts={props.posts} />
+				</div>
 
-					<div className="w-2/3 mt-12">
-						<PostListSection posts={props.posts} />
-					</div>
+				<div className="w-1/3 mt-4 pl-8">
 
-					<div className="w-1/3 mt-4 pl-8">
-
-						<div className="pt-8 sticky top-0">
-							<SearchSection />
-							<TagListSection label="最近のタグ" className="mt-4" tags={TagService.recentlyTags(props.posts)} />
-							<TagListSection label="全てのタグ" className="mt-4" tags={TagService.allTags(props.posts)} />
-						</div>
+					<div className="pt-8 sticky top-0">
+						<SearchSection />
+						<TagListSection label="最近のタグ" className="mt-4" tags={TagService.recentlyTags(props.posts)} />
+						<TagListSection label="全てのタグ" className="mt-4" tags={TagService.allTags(props.posts)} />
 					</div>
 				</div>
-			</main>
+			</div>
 		</Page>
 	)
 }
