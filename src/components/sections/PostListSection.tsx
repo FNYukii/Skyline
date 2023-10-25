@@ -1,4 +1,5 @@
 import Post from "@/entities/Post"
+import Image from "next/image"
 import Link from "next/link"
 
 interface Props {
@@ -21,7 +22,10 @@ function PostListSection(props: Props) {
 						<div>
 							<Link href={`/posts/${post.id}`} className="hover:brightness-90 transition">
 
-								<img src={post.thumbnail} alt={post.title} className="aspect-video object-cover" />
+								<div className="relative aspect-video bg-gray-200">
+
+									<Image src={post.thumbnail} alt={post.title} className="object-cover" fill />
+								</div>
 							</Link>
 						</div>
 
