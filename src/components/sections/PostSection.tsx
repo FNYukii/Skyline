@@ -28,8 +28,11 @@ function PostSection(props: Props) {
 	// モーダルを開くbuttonタグに入ったimgタグ
 	function ImgExpandable({ ...props }) {
 		return (
-			<button onClick={() => setOpenImage({ src: props.src, alt: props.alt })} className="mt-2 hover:brightness-90 transition w-fit">
-				<img src={props.src} alt={props.alt} className="h-full object-cover" />
+			<button onClick={() => setOpenImage({ src: props.src, alt: props.alt })} className="mt-2 hover:brightness-90 transition ">
+
+				<div className="relative aspect-video bg-gray-200">
+					<Image src={props.src} alt={props.alt} fill className="object-cover" />
+				</div>
 			</button>
 		)
 	}
@@ -44,7 +47,7 @@ function PostSection(props: Props) {
 					<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="hover:brightness-90 transition w-full">
 
 						<div className="relative aspect-video w-full bg-gray-200">
-							<Image src={props.post.thumbnail} alt={props.post.title} fill className="object-cover"  />
+							<Image src={props.post.thumbnail} alt={props.post.title} fill className="object-cover" />
 						</div>
 					</button>
 				</div>
