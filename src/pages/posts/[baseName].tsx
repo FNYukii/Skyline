@@ -58,25 +58,22 @@ function PostPage(props: Props) {
 
 		<Page title={`${props.post.title} - Skyline`}>
 
-			<main className="w-full lg:width-lg px-4 lg:px-0 mx-auto">
+			<div className="flex">
 
-				<div className="flex">
+				<div className="w-2/3 mt-12">
 
-					<div className="w-2/3 mt-12">
+					<PostSection post={props.post} />
+				</div>
 
-						<PostSection post={props.post} />
-					</div>
+				<div className="w-1/3 mt-4 pl-8">
 
-					<div className="w-1/3 mt-4 pl-8">
+					<div className='sticky pt-8 top-0'>
 
-						<div className='sticky pt-8 top-0'>
-
-							<TableOfContentsSection content={props.post.content} />
-							<TagListSection label={'関連タグ'} tags={props.post.tags} className='mt-4' />
-						</div>
+						<TableOfContentsSection content={props.post.content} />
+						<TagListSection label={'関連タグ'} tags={props.post.tags} className='mt-4' />
 					</div>
 				</div>
-			</main>
+			</div>
 		</Page>
 	)
 }
