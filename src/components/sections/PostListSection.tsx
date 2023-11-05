@@ -1,7 +1,9 @@
 import Post from "@/entities/Post"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 import { MdOutlineImageNotSupported } from "react-icons/md"
+import ReactLoading from "react-loading"
 
 interface Props {
 	posts: Post[]
@@ -10,13 +12,35 @@ interface Props {
 
 function PostListSection(props: Props) {
 
+	const [posts, setPosts] = useState<Post[]>(props.posts)
+	const [isLoading, setIsLoading] = useState(false)
+
+	async function loadAll() {
+
+		setIsLoading(true)
+
+		try {
+
+			const response = await fetch("/api/loadAllPosts")
+			const json = await response.json()
+			const posts = json.allPosts
+
+			setPosts(posts)
+
+		} catch (error) {
+			alert("Error! API読み出しに失敗しました。")
+		}
+
+		setIsLoading(false)
+	}
+
 	return (
 
 		<div className={props.className}>
 
 			<div className="grid grid-cols-2 gap-8">
 
-				{props.posts.map((post, index) => (
+				{posts.map((post, index) => (
 
 					<div key={index}>
 
@@ -61,7 +85,20 @@ function PostListSection(props: Props) {
 
 			<div className="flex justify-center">
 
-				<button className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-200 transition">もっと見る</button>
+				<button onClick={() => loadAll()} disabled={isLoading} className="mt-16 h-12 w-80 flex justify-center items-center border border-gray-300 hover:bg-gray-200 transition">
+					{!isLoading &&
+						<p>すべて見る</p>
+					}
+
+					{isLoading &&
+						<ReactLoading
+							type="spin"
+							color="#666"
+							height="1.2rem"
+							width="1.2rem"
+						/>
+					}
+				</button>
 			</div>
 		</div>
 	)

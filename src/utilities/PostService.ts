@@ -1,4 +1,5 @@
 import Post from "@/entities/Post";
+import dayjs from "dayjs";
 import fs from 'fs'
 import matter from 'gray-matter'
 
@@ -31,6 +32,55 @@ class PostService {
 		}
 
 		return post
+	}
+
+	static recently10Posts(): Post[] {
+
+		// postsフォルダ内のファイルのファイル名をすべて取得
+		const fileNames = fs.readdirSync('posts')
+
+		// posts配列を生成
+		let posts: Post[] = []
+		fileNames.forEach(fileName => {
+
+			// ベース名(ファイル名から拡張子を除去したもの)
+			const baseName = fileName.replace(/\.md$/, '')
+
+			// ベース名を元にPostを生成
+			const post = this.postFromBaseName(baseName)
+			posts.push(post)
+		})
+
+		// postsを新しい順に並べ替え
+		posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
+
+		// 最新の10件だけ残す
+		posts.length = 10
+
+		return posts
+	}
+
+	static allPosts(): Post[] {
+
+		// postsフォルダ内のファイルのファイル名をすべて取得
+		const fileNames = fs.readdirSync('posts')
+
+		// posts配列を生成
+		let posts: Post[] = []
+		fileNames.forEach(fileName => {
+
+			// ベース名(ファイル名から拡張子を除去したもの)
+			const baseName = fileName.replace(/\.md$/, '')
+
+			// ベース名を元にPostを生成
+			const post = this.postFromBaseName(baseName)
+			posts.push(post)
+		})
+
+		// postsを新しい順に並べ替え
+		posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
+
+		return posts
 	}
 }
 
