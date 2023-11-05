@@ -28,7 +28,7 @@ function PostListSection(props: Props) {
 			setPosts(posts)
 
 		} catch (error) {
-			alert("Error! API読み出しに失敗しました。")
+			alert("Error! API呼び出しに失敗しました。")
 		}
 
 		setIsLoading(false)
