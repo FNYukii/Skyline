@@ -29,12 +29,13 @@ function TableOfContentsSection(props: Props) {
 				<ol className="list-decimal list-inside text-gray-500">
 
 					<ReactMarkdown
-						children={props.content}
 						rehypePlugins={[rehypeRaw]} // これが無いとhtmlタグがそのまま表示される
 						allowedElements={['h2']} // h2要素のみを表示する
 						components={{ h2: anckerToId }} // h2要素をanckerToIdに置き換えて表示
 						className="post-table-of-contents mt-2 flex flex-col gap-y-1"
-					/>
+					>
+						{props.content}
+					</ReactMarkdown>
 				</ol>
 			</div>
 		</div>
