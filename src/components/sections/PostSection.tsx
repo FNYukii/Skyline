@@ -47,12 +47,18 @@ function PostSection(props: Props) {
 
 				<div className="flex">
 
-					<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="hover:brightness-90 transition w-full">
+					{props.post.thumbnail !== null &&
+						<button onClick={() => setOpenImage({ src: props.post.thumbnail!, alt: props.post.title })} className="hover:brightness-90 transition w-full">
 
-						<div className="relative aspect-video w-full bg-gray-200">
-							<Image src={props.post.thumbnail} alt={props.post.title} fill className="object-cover" />
-						</div>
-					</button>
+							<div className="relative aspect-video w-full bg-gray-200">
+								<Image src={props.post.thumbnail} alt={props.post.title} fill className="object-cover" />
+							</div>
+						</button>
+					}
+
+					{props.post.thumbnail === null &&
+						<div className="aspect-video w-full bg-gray-200"></div>
+					}
 				</div>
 
 				<div className="pt-4 pb-8 px-8 bg-white">

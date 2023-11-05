@@ -4,7 +4,7 @@ type Post = {
 	title: string
 	tags: string[]
 	createdAt: string
-	thumbnail: string
+	thumbnail: string | null
 	location: number[] | null
 	content: string
 }

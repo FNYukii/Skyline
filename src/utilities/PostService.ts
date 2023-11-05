@@ -16,7 +16,7 @@ class PostService {
 		const title: string = data.title
 		const tags: string[] = data.tags ?? []
 		const createdAt: string = data.createdAt
-		const thumbnail: string = data.thumbnail
+		const thumbnail: string | null = data.thumbnail ?? null
 		const location: number[] | null = data.location ?? null
 
 		// ファイルのベース名をidとして、postオブジェクトを生成

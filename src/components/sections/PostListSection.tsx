@@ -24,7 +24,9 @@ function PostListSection(props: Props) {
 
 								<div className="relative aspect-video bg-gray-200">
 
-									<Image src={post.thumbnail} alt={post.title} className="object-cover" fill />
+									{post.thumbnail !== null &&
+										<Image src={post.thumbnail} alt={post.title} className="object-cover" fill />
+									}
 								</div>
 							</Link>
 						</div>
