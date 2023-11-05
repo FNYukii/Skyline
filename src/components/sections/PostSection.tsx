@@ -7,6 +7,7 @@ import { useState } from "react"
 import rehypeRaw from "rehype-raw"
 import ImageModal from "../others/ImageModal"
 import Image from "next/image"
+import { MdOutlineImageNotSupported } from "react-icons/md"
 
 interface Props {
 	className?: string
@@ -57,7 +58,9 @@ function PostSection(props: Props) {
 					}
 
 					{props.post.thumbnail === null &&
-						<div className="aspect-video w-full bg-gray-200"></div>
+						<div className="aspect-video w-full flex justify-center items-center bg-gray-200">
+							<MdOutlineImageNotSupported className="text-4xl text-gray-400" />
+						</div>
 					}
 				</div>
 

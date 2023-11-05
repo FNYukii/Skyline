@@ -1,6 +1,7 @@
 import Post from "@/entities/Post"
 import Image from "next/image"
 import Link from "next/link"
+import { MdOutlineImageNotSupported } from "react-icons/md"
 
 interface Props {
 	posts: Post[]
@@ -22,12 +23,19 @@ function PostListSection(props: Props) {
 						<div>
 							<Link href={`/posts/${post.id}`} className="hover:brightness-90 transition">
 
-								<div className="relative aspect-video bg-gray-200">
+								{post.thumbnail !== null &&
 
-									{post.thumbnail !== null &&
+									<div className="relative aspect-video bg-gray-200">
 										<Image src={post.thumbnail} alt={post.title} className="object-cover" fill />
-									}
-								</div>
+									</div>
+								}
+
+								{post.thumbnail === null &&
+
+									<div className="aspect-video flex justify-center items-center bg-gray-200">
+										<MdOutlineImageNotSupported className="text-4xl text-gray-400" />
+									</div>
+								}
 							</Link>
 						</div>
 
