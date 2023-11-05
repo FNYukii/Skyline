@@ -21,7 +21,7 @@ function PostSection(props: Props) {
 	// ID付きのh2タグ
 	function h2WithId({ ...props }) {
 		return (
-			<h2 id={props.children}>{props.children}</h2>
+			<h2 id={`${props.children}`}>{props.children}</h2>
 		)
 	}
 
