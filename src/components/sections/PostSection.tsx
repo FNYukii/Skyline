@@ -7,6 +7,7 @@ import { useState } from "react"
 import rehypeRaw from "rehype-raw"
 import ImageModal from "../others/ImageModal"
 import Image from "next/image"
+import { MdOutlineImageNotSupported } from "react-icons/md"
 
 interface Props {
 	className?: string
@@ -47,12 +48,20 @@ function PostSection(props: Props) {
 
 				<div className="flex">
 
-					<button onClick={() => setOpenImage({ src: props.post.thumbnail, alt: props.post.title })} className="hover:brightness-90 transition w-full">
+					{props.post.thumbnail !== null &&
+						<button onClick={() => setOpenImage({ src: props.post.thumbnail!, alt: props.post.title })} className="hover:brightness-90 transition w-full">
 
-						<div className="relative aspect-video w-full bg-gray-200">
-							<Image src={props.post.thumbnail} alt={props.post.title} fill className="object-cover" />
+							<div className="relative aspect-video w-full bg-gray-200">
+								<Image src={props.post.thumbnail} alt={props.post.title} fill className="object-cover" />
+							</div>
+						</button>
+					}
+
+					{props.post.thumbnail === null &&
+						<div className="aspect-video w-full flex justify-center items-center bg-gray-200">
+							<MdOutlineImageNotSupported className="text-4xl text-gray-400" />
 						</div>
-					</button>
+					}
 				</div>
 
 				<div className="pt-4 pb-8 px-8 bg-white">

@@ -6,7 +6,6 @@ class PostService {
 
 	static postFromBaseName(baseName: string): Post {
 
-
 		// ファイル内のテキスト
 		const textInFile = fs.readFileSync(`posts/${baseName}.md`, 'utf-8')
 
@@ -15,9 +14,9 @@ class PostService {
 
 		// dataオフジェクトからtitle, tags, date, thumbnailプロパティの値を取り出す
 		const title: string = data.title
-		const tags: string[] = data.tags
+		const tags: string[] = data.tags ?? []
 		const createdAt: string = data.createdAt
-		const thumbnail: string = data.thumbnail
+		const thumbnail: string | null = data.thumbnail ?? null
 		const location: number[] | null = data.location ?? null
 
 		// ファイルのベース名をidとして、postオブジェクトを生成
