@@ -39,6 +39,10 @@ function PostListSection(props: Props) {
 
 									<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
 								))}
+
+								{post.tags.length === 0 &&
+									<p className="text-gray-500">タグはありません</p>
+								}
 							</div>
 						</div>
 					</div>

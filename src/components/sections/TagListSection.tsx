@@ -1,6 +1,6 @@
 interface Props {
 	className?: string
-	
+
 	label: string
 	tags: string[]
 }
@@ -21,6 +21,10 @@ function TagListSection(props: Props) {
 
 						<button key={index} className="text-gray-500 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</button>
 					))}
+
+					{props.tags.length === 0 &&
+						<p className="text-gray-500">タグはありません</p>
+					}
 				</div>
 			</div>
 		</div>
