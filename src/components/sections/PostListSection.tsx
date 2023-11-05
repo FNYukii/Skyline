@@ -21,7 +21,7 @@ function PostListSection(props: Props) {
 
 		try {
 
-			const response = await fetch("http://localhost:3000/api/loadAllPosts")
+			const response = await fetch("/api/loadAllPosts")
 			const json = await response.json()
 			const posts = json.allPosts
 
