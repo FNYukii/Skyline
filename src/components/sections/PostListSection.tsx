@@ -1,6 +1,7 @@
 import Post from "@/entities/Post"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 import { MdOutlineImageNotSupported } from "react-icons/md"
 
 interface Props {
@@ -10,14 +11,18 @@ interface Props {
 
 function PostListSection(props: Props) {
 
-	async function loadMore() {
+	const [posts, setPosts] = useState<Post[]>(props.posts)
+
+	async function loadAll() {
 
 		try {
 
 			const response = await fetch("http://localhost:3000/api/loadAllPosts")
 			const json = await response.json()
+			const posts = json.allPosts
 
-			alert(`message: ${json.message}`)
+			setPosts(posts)
+
 		} catch (error) {
 			alert(`Error!`)
 		}
@@ -29,7 +34,7 @@ function PostListSection(props: Props) {
 
 			<div className="grid grid-cols-2 gap-8">
 
-				{props.posts.map((post, index) => (
+				{posts.map((post, index) => (
 
 					<div key={index}>
 
@@ -74,7 +79,7 @@ function PostListSection(props: Props) {
 
 			<div className="flex justify-center">
 
-				<button onClick={() => loadMore()} className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-200 transition">もっと見る</button>
+				<button onClick={() => loadAll()} className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-200 transition">すべて見る</button>
 			</div>
 		</div>
 	)
