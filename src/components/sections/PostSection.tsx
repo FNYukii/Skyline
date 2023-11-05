@@ -20,8 +20,11 @@ function PostSection(props: Props) {
 
 	// ID付きのh2タグ
 	function h2WithId({ ...props }) {
+
+		const id: string = props.children
+
 		return (
-			<h2 id={`${props.children}`}>{props.children}</h2>
+			<h2 id={id}>{props.children}</h2>
 		)
 	}
 
@@ -67,12 +70,13 @@ function PostSection(props: Props) {
 					</div>
 
 					<ReactMarkdown
-						children={props.post.content}
 						remarkPlugins={[remarkGfm]}
 						rehypePlugins={[rehypeRaw]}
 						components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
 						className="post-content"
-					/>
+					>
+						{props.post.content}
+					</ReactMarkdown>
 
 					<ImageModal image={openImage} setImage={setOpenImage} />
 
