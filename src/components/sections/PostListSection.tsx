@@ -1,4 +1,5 @@
 import Post from "@/entities/Post"
+import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
 import { MdOutlineImageNotSupported } from "react-icons/md"
@@ -9,6 +10,19 @@ interface Props {
 }
 
 function PostListSection(props: Props) {
+
+	async function loadMore() {
+
+		try {
+
+			const response = await fetch("http://localhost:3000/api/loadAllPosts")
+			const json = await response.json()
+
+			alert(`message: ${json.message}`)
+		} catch (error) {
+			alert(`Error!`)
+		}
+	}
 
 	return (
 
@@ -61,7 +75,7 @@ function PostListSection(props: Props) {
 
 			<div className="flex justify-center">
 
-				<button className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-200 transition">もっと見る</button>
+				<button onClick={() => loadMore()} className="mt-16 py-2 px-24 border border-gray-300 hover:bg-gray-200 transition">もっと見る</button>
 			</div>
 		</div>
 	)
