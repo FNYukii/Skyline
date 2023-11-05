@@ -1,6 +1,5 @@
 interface Props {
 	className?: string
-
 	label: string
 	tags: string[]
 }
