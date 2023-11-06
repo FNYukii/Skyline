@@ -5,7 +5,7 @@ interface Props {
 	className?: string
 }
 
-function SearchSection(props: Props) {
+function SearchBar(props: Props) {
 
 	const [keyword, setKeyword] = useState("")
 
@@ -40,4 +40,4 @@ function SearchSection(props: Props) {
 	)
 }
 
-export default SearchSection
+export default SearchBar
