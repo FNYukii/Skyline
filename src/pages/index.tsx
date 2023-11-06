@@ -1,6 +1,6 @@
 import Page from "@/components/others/Page"
 import PostListSection from "@/components/sections/PostListSection"
-import SearchSection from "@/components/sections/SearchSection"
+import SearchBar from "@/components/sections/SearchBar"
 import fs from 'fs'
 import Post from "@/entities/Post"
 import dayjs from "dayjs"
@@ -41,7 +41,7 @@ function Home(props: Props) {
 				<div className="w-1/3 mt-4 pl-8">
 
 					<div className="pt-8 sticky top-0">
-						<SearchSection />
+						<SearchBar />
 						<TagListSection label="最近のタグ" className="mt-4" tags={TagService.recentlyTags(props.posts)} />
 						<TagListSection label="全てのタグ" className="mt-4" tags={TagService.allTags(props.posts)} />
 					</div>
