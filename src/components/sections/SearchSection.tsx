@@ -15,16 +15,14 @@ function SearchSection(props: Props) {
 
 			<div className="relative">
 
-				{keyword === "" &&
-					<div className="absolute pointer-events-non">
+				<div className="absolute pointer-events-none">
 
-						<div className="mt-2 ml-4 flex items-center gap-2">
+					<div className="mt-2 ml-4 flex items-center">
 
-							<AiOutlineSearch className="text-gray-500" />
-							<span className="text-gray-500">検索</span>
-						</div>
+						<AiOutlineSearch className="text text-gray-500" />
+						<p className="opacity-0">---</p>
 					</div>
-				}
+				</div>
 
 				{keyword !== "" &&
 					<div className="absolute w-full flex justify-end">
@@ -35,7 +33,7 @@ function SearchSection(props: Props) {
 					</div>
 				}
 
-				<input type="text" value={keyword} onChange={(event) => setKeyword(event.target.value)} className="px-4 py-2 w-full rounded-none outline-blue-500" />
+				<input type="text" value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="検索" className="pl-11 pr-4 py-2 w-full rounded-none outline-blue-500" />
 			</div>
 
 		</div>
