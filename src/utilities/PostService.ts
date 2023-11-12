@@ -60,10 +60,10 @@ class PostService {
 		return posts
 	}
 
-	static async allPosts(): Promise<Post[]> {
+	static allPosts(): Post[] {
 
 		// postsフォルダ内のファイルのファイル名をすべて取得
-		const fileNames = await fs.readdirSync('posts')
+		const fileNames = fs.readdirSync('posts')
 
 		// posts配列を生成
 		let posts: Post[] = []
@@ -79,7 +79,7 @@ class PostService {
 
 		// postsを新しい順に並べ替え
 		posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
-
+		
 		return posts
 	}
 }
