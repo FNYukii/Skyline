@@ -11,7 +11,7 @@ export default function handler (
 	res: NextApiResponse<ResponseData>
 ) {
 
-	const posts = PostService.test()
+	const posts = PostService.allPosts()
 	
 	res.status(200).json({ allPosts: posts })
 }

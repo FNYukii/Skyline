@@ -82,25 +82,6 @@ class PostService {
 
 		return posts
 	}
-
-	static test(): Post[] {
-
-		const fileNames = fs.readdirSync('posts')
-
-		const posts = [
-			{
-				id: "9999",
-				title: "Testタワー",
-				tags: ["オフィスビル"],
-				createdAt: "2023-09-23 14:30:20",
-				thumbnail: null,
-				location: null,
-				content: "SampleSampleSample"
-			}
-		]
-
-		return posts
-	}
 }
 
 export default PostService
