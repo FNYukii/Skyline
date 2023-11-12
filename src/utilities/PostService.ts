@@ -85,6 +85,8 @@ class PostService {
 
 	static test(): Post[] {
 
+		const fileNames = fs.readdirSync('posts')
+
 		const posts = [
 			{
 				id: "9999",
