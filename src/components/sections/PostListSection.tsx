@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { MdOutlineImageNotSupported } from "react-icons/md"
-import ReactLoading from "react-loading"
 
 interface Props {
 	posts: Post[]
@@ -84,24 +83,6 @@ function PostListSection(props: Props) {
 						</div>
 					</div>
 				))}
-			</div>
-
-			<div className="flex justify-center">
-
-				<button onClick={() => loadAll()} disabled={isLoading} className="mt-16 h-12 w-80 flex justify-center items-center border border-gray-300 hover:bg-gray-200 transition">
-					{!isLoading &&
-						<p>すべて見る</p>
-					}
-
-					{isLoading &&
-						<ReactLoading
-							type="spin"
-							color="#666"
-							height="1.2rem"
-							width="1.2rem"
-						/>
-					}
-				</button>
 			</div>
 		</div>
 	)

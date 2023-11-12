@@ -5,12 +5,11 @@ import Post from "@/entities/Post"
 import TagListSection from "@/components/sections/TagListSection"
 import TagService from "@/utilities/TagService"
 import PostService from "@/utilities/PostService"
-import Link from "next/link"
 
 function getStaticProps() {
 
 	// リストに表示するPost
-	const posts = PostService.recently10Posts()
+	const posts = PostService.allPosts()
 
 	// タグ
 	const allTags = TagService.allTags()
@@ -33,21 +32,19 @@ interface Props {
 	recentlyTags: string[]
 }
 
-function Home(props: Props) {
+function All(props: Props) {
 
 	return (
 
-		<Page>
+		<Page title="全ての記事 - Skyline">
 
 			<div className="flex">
 
 				<div className="w-2/3 mt-12">
-					<PostListSection posts={props.posts} />
 
-					<div className="mt-16 flex justify-center">
+					<h1 className="font-bold text-2xl">全ての記事</h1>
 
-						<Link href="/all" className="py-2 px-16 border border-gray-300 hover:bg-gray-200 transition">全ての記事</Link>
-					</div>
+					<PostListSection className="mt-4" posts={props.posts} />
 				</div>
 
 				<div className="w-1/3 mt-4 pl-8">
@@ -64,4 +61,4 @@ function Home(props: Props) {
 }
 
 export { getStaticProps }
-export default Home
+export default All
