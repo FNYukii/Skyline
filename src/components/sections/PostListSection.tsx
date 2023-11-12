@@ -22,7 +22,7 @@ function PostListSection(props: Props) {
 		try {
 
 			// 全てのPostを返すAPI Routesを呼び出し
-			const response = await fetch("/api/loadAllPosts")
+			const response = await fetch("/api/posts")
 			const json = await response.json()
 			const posts = json.allPosts
 
