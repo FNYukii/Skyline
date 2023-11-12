@@ -21,6 +21,7 @@ function PostListSection(props: Props) {
 
 		try {
 
+			// 全てのPostを返すAPI Routesを呼び出し
 			const response = await fetch("/api/loadAllPosts")
 			const json = await response.json()
 			const posts = json.allPosts
@@ -28,7 +29,9 @@ function PostListSection(props: Props) {
 			setPosts(posts)
 
 		} catch (error) {
-			alert("Error! API呼び出しに失敗しました。")
+
+			alert("API呼び出しに失敗しました。")
+			console.log(`Fail! Error calling /api/loadAllPosts. ${error}`)
 		}
 
 		setIsLoading(false)
