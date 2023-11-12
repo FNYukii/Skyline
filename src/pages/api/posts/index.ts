@@ -11,6 +11,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	return new Promise(async () => {
 
 		const posts = await PostService.allPosts()
-		res.status(200).json({ allPosts: posts })
+		return res.status(200).json({ allPosts: posts })
 	})
 }
