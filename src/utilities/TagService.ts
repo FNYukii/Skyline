@@ -1,4 +1,3 @@
-import Post from "@/entities/Post"
 import PostService from "./PostService"
 
 class TagService {
