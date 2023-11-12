@@ -5,7 +5,6 @@ import TagListSection from '@/components/sections/TagListSection'
 import Post from '@/entities/Post'
 import PostService from '@/utilities/PostService'
 import fs from 'fs'
-import Link from 'next/link'
 
 function getStaticPaths() {
 
