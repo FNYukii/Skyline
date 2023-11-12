@@ -60,7 +60,7 @@ class PostService {
 		return posts
 	}
 
-	static allPosts(): Post[] {
+	static async allPosts(): Promise<Post[]> {
 
 		// postsフォルダ内のファイルのファイル名をすべて取得
 		const fileNames = fs.readdirSync('posts')
