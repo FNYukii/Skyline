@@ -1,7 +1,6 @@
 import Post from "@/entities/Post"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
 import { MdOutlineImageNotSupported } from "react-icons/md"
 
 interface Props {
@@ -11,38 +10,13 @@ interface Props {
 
 function PostListSection(props: Props) {
 
-	const [posts, setPosts] = useState<Post[]>(props.posts)
-	const [isLoading, setIsLoading] = useState(false)
-
-	async function loadAll() {
-
-		setIsLoading(true)
-
-		try {
-
-			// 全てのPostを返すAPI Routesを呼び出し
-			const response = await fetch("/api/posts")
-			const json = await response.json()
-			const posts = json.allPosts
-
-			setPosts(posts)
-
-		} catch (error) {
-
-			alert("API呼び出しに失敗しました。")
-			console.log(`Fail! Error calling /api/loadAllPosts. ${error}`)
-		}
-
-		setIsLoading(false)
-	}
-
 	return (
 
 		<div className={props.className}>
 
 			<div className="grid grid-cols-2 gap-8">
 
-				{posts.map((post, index) => (
+				{props.posts.map((post, index) => (
 
 					<div key={index}>
 

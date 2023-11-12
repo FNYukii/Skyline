@@ -44,10 +44,13 @@ function Home(props: Props) {
 				<div className="w-2/3 mt-12">
 					<PostListSection posts={props.posts} />
 
-					<div className="mt-16 flex justify-center">
+					{props.posts.length > 10 &&
 
-						<Link href="/all" className="py-2 px-16 border border-gray-300 hover:bg-gray-200 transition">全ての記事</Link>
-					</div>
+						<div className="mt-16 flex justify-center">
+
+							<Link href="/all" className="py-2 px-16 border border-gray-300 hover:bg-gray-200 transition">全ての記事</Link>
+						</div>
+					}
 				</div>
 
 				<div className="w-1/3 mt-4 pl-8">

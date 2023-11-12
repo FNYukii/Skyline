@@ -60,7 +60,10 @@ class PostService {
 	static recently10Posts(): Post[] {
 
 		const posts = this.allPosts()
-		posts.length = 10
+
+		if (posts.length > 10) {
+			posts.length = 10
+		}
 
 		return posts
 	}
