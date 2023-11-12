@@ -79,7 +79,24 @@ class PostService {
 
 		// postsを新しい順に並べ替え
 		posts.sort((a, b) => dayjs(b.createdAt).toDate().valueOf() - dayjs(a.createdAt).toDate().valueOf())
-		
+
+		return posts
+	}
+
+	static test(): Post[] {
+
+		const posts = [
+			{
+				id: "9999",
+				title: "Testタワー",
+				tags: ["オフィスビル"],
+				createdAt: "2023-09-23 14:30:20",
+				thumbnail: null,
+				location: null,
+				content: "SampleSampleSample"
+			}
+		]
+
 		return posts
 	}
 }
