@@ -6,17 +6,15 @@ type ResponseData = {
 	allPosts: Post[]
 }
 
-export default async function handler(
+export default function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<ResponseData>
 ) {
 
-	// const postsPromise = PostService.allPosts()
+	const postsPromise = PostService.allPosts()
 
-	// return postsPromise.then((posts) => {
+	return postsPromise.then((posts) => {
 
-	// 	res.status(200).json({ allPosts: posts })
-	// })
-
-	res.status(200).json({ allPosts: [] })
+		res.status(200).json({ allPosts: posts })
+	})
 }
