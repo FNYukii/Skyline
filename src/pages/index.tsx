@@ -8,13 +8,19 @@ import PostService from "@/utilities/PostService"
 
 function getStaticProps() {
 
-	// 最新のPostを10件取得
+	// リストに表示するPost
 	const posts = PostService.recently10Posts()
+
+	// タグ
+	const allTags = TagService.allTags()
+	const recentlyTags = TagService.recentlyTags()
 
 	// postsをHomeコンポーネントに渡す
 	return {
 		props: {
 			posts,
+			allTags,
+			recentlyTags
 		},
 	}
 }
@@ -22,6 +28,8 @@ function getStaticProps() {
 
 interface Props {
 	posts: Post[],
+	allTags: string[]
+	recentlyTags: string[]
 }
 
 function Home(props: Props) {
@@ -40,8 +48,8 @@ function Home(props: Props) {
 
 					<div className="pt-8 sticky top-0">
 						<SearchBar />
-						<TagListSection label="最近のタグ" className="mt-4" tags={TagService.recentlyTags(props.posts)} />
-						<TagListSection label="全てのタグ" className="mt-4" tags={TagService.allTags(props.posts)} />
+						<TagListSection label="最近のタグ" className="mt-4" tags={props.recentlyTags} />
+						<TagListSection label="全てのタグ" className="mt-4" tags={props.allTags} />
 					</div>
 				</div>
 			</div>

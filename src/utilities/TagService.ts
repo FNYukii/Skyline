@@ -1,8 +1,11 @@
 import Post from "@/entities/Post"
+import PostService from "./PostService"
 
 class TagService {
 
-	static allTags(posts: Post[]): string[] {
+	static allTags(): string[] {
+
+		const posts = PostService.allPosts()
 
 		// 全Post内の全タグを取り出す
 		let tags: string[] = []
@@ -22,7 +25,9 @@ class TagService {
 		return tags
 	}
 
-	static recentlyTags(posts: Post[]): string[] {
+	static recentlyTags(): string[] {
+
+		const posts = PostService.allPosts()
 
 		// 全Post内の全タグを取り出す
 		let tags: string[] = []
