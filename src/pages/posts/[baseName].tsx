@@ -5,6 +5,7 @@ import TagListSection from '@/components/sections/TagListSection'
 import Post from '@/entities/Post'
 import PostService from '@/utilities/PostService'
 import fs from 'fs'
+import Router from 'next/router'
 
 function getStaticPaths() {
 
@@ -62,6 +63,11 @@ function PostPage(props: Props) {
 				<div className="w-2/3 mt-12">
 
 					<PostSection post={props.post} />
+
+					<div className="mt-8 flex justify-center">
+
+						<button onClick={() => Router.back()} className="py-2 px-16 border border-gray-300 hover:bg-gray-200 transition">戻る</button>
+					</div>
 				</div>
 
 				<div className="w-1/3 mt-4 pl-8">
