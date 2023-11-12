@@ -6,9 +6,11 @@ type ResponseData = {
 	allPosts: Post[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse<ResponseData>) => {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
 
-	const posts = await PostService.allPosts()
+	return new Promise(async () => {
 
-	res.status(200).json({ allPosts: posts })
+		const posts = await PostService.allPosts()
+		res.status(200).json({ allPosts: posts })
+	})
 }

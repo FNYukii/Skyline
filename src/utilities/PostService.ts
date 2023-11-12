@@ -63,7 +63,7 @@ class PostService {
 	static async allPosts(): Promise<Post[]> {
 
 		// postsフォルダ内のファイルのファイル名をすべて取得
-		const fileNames = fs.readdirSync('posts')
+		const fileNames = await fs.readdirSync('posts')
 
 		// posts配列を生成
 		let posts: Post[] = []
