@@ -1,3 +1,4 @@
+import BackButton from '@/components/others/BackButton'
 import PostSection from '@/components/sections/PostSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
@@ -30,7 +31,7 @@ export default function PostPage({ params }: { params: { baseName: string } }) {
 
 				<div className="mt-8 flex justify-center">
 
-					{/* <button onClick={() => router.back()} className="py-2 px-16 border border-gray-300 hover:bg-gray-200 transition">戻る</button> */}
+					<BackButton />
 				</div>
 			</div>
 
