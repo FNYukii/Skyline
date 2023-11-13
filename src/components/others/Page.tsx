@@ -10,22 +10,16 @@ interface Props {
 function Page(props: Props) {
 
 	return (
-		<>
-			<Head>
-				<title>{props.title ?? "Skyline"}</title>
-			</Head>
+		<div className="bg-gray-100">
 
-			<div className="bg-gray-100">
+			<Header />
 
-				<Header />
+			<main className="lg:w-[1024px] px-4 lg:px-0 mx-auto">
+				{props.children}
+			</main>
 
-				<main className="lg:w-[1024px] px-4 lg:px-0 mx-auto">
-					{props.children}
-				</main>
-
-				<Footer className="mt-24" />
-			</div>
-		</>
+			<Footer className="mt-24" />
+		</div>
 	)
 }
 
