@@ -1,3 +1,5 @@
+'use client'
+
 import Post from "@/entities/Post"
 import dayjs from "dayjs"
 import { AiOutlineEdit } from "react-icons/ai"
