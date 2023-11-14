@@ -2,7 +2,7 @@ import BackButton from '@/components/others/BackButton'
 import PostSection from '@/components/sections/PostSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
-import PostService from '@/utilities/PostService'
+import PostService from '@/utils/PostService'
 
 export async function generateMetadata({ params }: { params: { baseName: string } }) {
 

@@ -1,8 +1,8 @@
 import PostListSection from "@/components/sections/PostListSection"
 import SearchBar from "@/components/sections/SearchBar"
 import TagListSection from "@/components/sections/TagListSection"
-import PostService from "@/utilities/PostService"
-import TagService from "@/utilities/TagService"
+import PostService from "@/utils/PostService"
+import TagService from "@/utils/TagService"
 import Link from "next/link"
 
 export default function Home() {

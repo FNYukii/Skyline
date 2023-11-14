@@ -2,13 +2,18 @@ import Post from "@/entities/Post";
 import dayjs from "dayjs";
 import fs from 'fs'
 import matter from 'gray-matter'
+import path from 'path'
 
 class PostService {
 
 	static postFromBaseName(baseName: string): Post {
 
+		// mdファイルへの絶対パスを取得
+		const postsDirectory = path.join(process.cwd(), 'posts')
+		const fullPath = path.join(postsDirectory, `${baseName}.md`)
+
 		// ファイル内のテキスト
-		const textInFile = fs.readFileSync(`posts/${baseName}.md`, 'utf-8')
+		const textInFile = fs.readFileSync(fullPath, 'utf-8')
 
 		// ファイル内のテキストをdataとContentに分離
 		const { data, content } = matter(textInFile)
