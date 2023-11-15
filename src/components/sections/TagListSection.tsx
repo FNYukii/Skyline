@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 interface Props {
 	className?: string
 	label: string
@@ -18,7 +20,7 @@ function TagListSection(props: Props) {
 
 					{props.tags.map((tag, index) => (
 
-						<button key={index} className="text-gray-500 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</button>
+						<Link href="" key={index} className="text-gray-500 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</Link>
 					))}
 
 					{props.tags.length === 0 &&

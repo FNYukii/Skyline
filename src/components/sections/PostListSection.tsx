@@ -42,12 +42,11 @@ function PostListSection(props: Props) {
 						<div className="p-4 bg-white">
 
 							<Link href={`/posts/${post.id}`} className="text-lg font-bold hover:underline">{post.title}</Link>
-
-
+							
 							<div className="overflow-hidden text-ellipsis whitespace-nowrap">
 								{post.tags.map((tag, index) => (
 
-									<button key={index} className="mr-2 text-gray-500 hover:underline">{tag}</button>
+									<Link href="" key={index} className="mr-2 text-gray-500 hover:underline">{tag}</Link>
 								))}
 
 								{post.tags.length === 0 &&
