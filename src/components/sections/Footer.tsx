@@ -14,14 +14,14 @@ function Footer(props: Props) {
 
 				<div className="w-full lg:w-[1024px] px-4 lg:px-0 mx-auto">
 
-					<div className="flex justify-between">
+					<div className="flex justify-between flex-wrap gap-y-8">
 
-						<div className="">
+						<div className="w-full sm:w-fit">
 							<Link href="/" className="text-4xl font-light">Skyline</Link>
 							<p className="mt-1 text-gray-400">好きなビルを語るブログ</p>
 						</div>
 
-						<div className="flex gap-32">
+						<div className="flex gap-8 sm:gap-16">
 
 							<div>
 								<p className="font-bold text-xl">Pages</p>

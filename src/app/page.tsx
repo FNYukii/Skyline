@@ -18,7 +18,7 @@ export default function Home() {
 
 		<div className="flex">
 
-			<div className="w-2/3 mt-12">
+			<div className="w-full md:w-2/3 mt-12">
 
 				<PostListSection posts={posts} />
 
@@ -31,7 +31,7 @@ export default function Home() {
 				}
 			</div>
 
-			<div className="w-1/3 mt-4 pl-8">
+			<div className="hidden md:block md:w-1/3 mt-4 pl-8">
 
 				<div className="pt-8 sticky top-0">
 					<SearchBar />

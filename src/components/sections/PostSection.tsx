@@ -66,9 +66,9 @@ function PostSection(props: Props) {
 					}
 				</div>
 
-				<div className="pt-6 pb-12 px-8 bg-white">
+				<div className="pt-6 pb-12 px-4 sm:px-8 bg-white">
 
-					<div className="flex justify-between">
+					<div className="flex justify-between gap-x-4 flex-wrap gap-y-1">
 
 						<h1 className="text-2xl font-bold">{props.post.title}</h1>
 
@@ -96,11 +96,10 @@ function PostSection(props: Props) {
 							<h2 className="font-bold text-xl">マップ</h2>
 							<iframe
 								src={`https://maps.google.co.jp/maps?output=embed&q=${props.post.location.at(0)}, ${props.post.location.at(1)}`}
-								height="450"
 								loading="lazy"
 								referrerPolicy="no-referrer-when-downgrade"
 								title='GoogleMap'
-								className='mt-2 border border-gray-100 w-full aspect-video bg-gray-100'
+								className='mt-2 border border-gray-100 w-full aspect-square sm:aspect-video bg-gray-100'
 							/>
 						</div>
 					}

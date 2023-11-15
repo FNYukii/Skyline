@@ -22,7 +22,7 @@
 }
 
 .post-content table th:first-child {
-	@apply w-1/6
+	@apply w-1/4 sm:w-1/6
 }
 
 .post-content table tbody tr {
