@@ -3,12 +3,11 @@ import SearchBar from "@/components/sections/SearchBar"
 import TagListSection from "@/components/sections/TagListSection"
 import PostService from "@/utils/PostService"
 import TagService from "@/utils/TagService"
-import Link from "next/link"
 
 export default function Home() {
 
 	// 表示する記事
-	const posts = PostService.recently10Posts()
+	const allPosts = PostService.recently10Posts()
 
 	// タグ
 	const allTags = TagService.allTags()
@@ -20,15 +19,7 @@ export default function Home() {
 
 			<div className="w-full md:w-2/3 mt-12">
 
-				<PostListSection posts={posts} />
-
-				{posts.length > 10 &&
-
-					<div className="mt-16 flex justify-center">
-
-						<Link href="/all" className="py-2 px-16 border border-gray-300 hover:bg-gray-200 transition">全ての記事</Link>
-					</div>
-				}
+				<PostListSection posts={allPosts} />
 			</div>
 
 			<div className="hidden md:block md:w-1/3 mt-4 pl-8">
