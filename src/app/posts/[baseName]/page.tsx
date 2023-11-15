@@ -40,7 +40,7 @@ export default function PostPage({ params }: { params: { baseName: string } }) {
 				<div className='sticky pt-8 top-0'>
 
 					<TableOfContentsSection content={post.content} />
-					<TagListSection label={'関連タグ'} tags={post.tags} className='mt-4' />
+					<TagListSection label="タグ" tags={post.tags} className='mt-4' />
 				</div>
 			</div>
 		</div>
