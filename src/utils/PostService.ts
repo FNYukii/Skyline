@@ -72,6 +72,16 @@ class PostService {
 
 		return posts
 	}
+
+	static relatedPosts(post: Post): Post[] {
+
+		const allPosts = this.allPosts()
+		const tags = post.tags
+
+		// TODO: postsにフィルターをかけ、タグが一件でも一致するpostのみ残す
+
+		return []
+	}
 }
 
 export default PostService
