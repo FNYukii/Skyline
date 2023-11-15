@@ -66,7 +66,7 @@ function PostSection(props: Props) {
 					}
 				</div>
 
-				<div className="pt-4 pb-8 px-8 bg-white">
+				<div className="pt-6 pb-12 px-8 bg-white">
 
 					<div className="flex justify-between">
 
