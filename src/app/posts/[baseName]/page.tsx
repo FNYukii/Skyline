@@ -25,7 +25,7 @@ export default function PostPage({ params }: { params: { baseName: string } }) {
 
 		<div className="flex">
 
-			<div className="w-2/3 mt-12">
+			<div className="w-full md:w-2/3 mt-12">
 
 				<PostSection post={post} />
 
@@ -35,7 +35,7 @@ export default function PostPage({ params }: { params: { baseName: string } }) {
 				</div>
 			</div>
 
-			<div className="w-1/3 mt-4 pl-8">
+			<div className="hidden md:block md:w-1/3 mt-4 pl-8">
 
 				<div className='sticky pt-8 top-0'>
 

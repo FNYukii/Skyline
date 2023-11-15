@@ -66,9 +66,9 @@ function PostSection(props: Props) {
 					}
 				</div>
 
-				<div className="pt-6 pb-12 px-8 bg-white">
+				<div className="pt-6 pb-12 px-4 sm:px-8 bg-white">
 
-					<div className="flex justify-between">
+					<div className="flex justify-between gap-x-4 flex-wrap gap-y-1">
 
 						<h1 className="text-2xl font-bold">{props.post.title}</h1>
 
