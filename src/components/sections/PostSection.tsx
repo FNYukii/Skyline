@@ -96,11 +96,10 @@ function PostSection(props: Props) {
 							<h2 className="font-bold text-xl">マップ</h2>
 							<iframe
 								src={`https://maps.google.co.jp/maps?output=embed&q=${props.post.location.at(0)}, ${props.post.location.at(1)}`}
-								height="450"
 								loading="lazy"
 								referrerPolicy="no-referrer-when-downgrade"
 								title='GoogleMap'
-								className='mt-2 border border-gray-100 w-full aspect-video bg-gray-100'
+								className='mt-2 border border-gray-100 w-full aspect-square sm:aspect-video bg-gray-100'
 							/>
 						</div>
 					}
