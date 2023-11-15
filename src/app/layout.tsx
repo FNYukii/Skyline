@@ -14,9 +14,9 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="ja">
+		<html lang="ja" className="h-full">
 
-			<body className="bg-gray-100">
+			<body className="bg-gray-100 h-full">
 				
 				<Header />
 
@@ -24,7 +24,7 @@ export default function RootLayout({
 					{children}
 				</main>
 
-				<Footer className="mt-24" />
+				<Footer className="mt-24 sticky top-full" />
 			</body>
 		</html>
 	)
