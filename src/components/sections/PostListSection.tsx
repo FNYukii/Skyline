@@ -14,7 +14,7 @@ function PostListSection(props: Props) {
 
 		<div className={props.className}>
 
-			<div className="grid grid-cols-2 gap-8">
+			<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
 				{props.posts.map((post, index) => (
 
