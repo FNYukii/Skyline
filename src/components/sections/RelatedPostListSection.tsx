@@ -49,7 +49,7 @@ function RelatedPostListSection(props: Props) {
 
 							<div className="overflow-hidden text-ellipsis whitespace-nowrap">
 
-								<Link href={`/posts/${post.id}`} className="hover:underline">{post.title}</Link>
+								<Link href={`/posts/${post.id}`} className="font-bold hover:underline">{post.title}</Link>
 								<p className="text-gray-500">{dayjs(post.createdAt).format("YYYY年M月D日")}</p>
 							</div>
 						</div>
