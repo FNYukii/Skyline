@@ -66,6 +66,7 @@ class PostService {
 
 		const posts = this.allPosts()
 
+		// 要素数を制限
 		if (posts.length > 10) {
 			posts.length = 10
 		}
@@ -77,12 +78,12 @@ class PostService {
 
 		const targetTags = targetPost.tags
 		const allPosts = this.allPosts()
-		
+
 		// postsにフィルターをかけ、タグが一件でも一致するpostのみを取り出す
 		let relatedPosts: Post[] = []
 
 		allPosts.forEach(post => {
-						
+
 			// postとtargetPostで一致するタグを抽出
 			const matchTags = post.tags.filter(tag => targetTags.includes(tag))
 
@@ -94,6 +95,11 @@ class PostService {
 
 		// 引数として渡されたpostを除外
 		relatedPosts = relatedPosts.filter(post => post.id !== targetPost.id)
+
+		// 要素数を制限
+		if (relatedPosts.length > 5) {
+			relatedPosts.length = 5
+		}
 
 		return relatedPosts
 	}
