@@ -66,11 +66,42 @@ class PostService {
 
 		const posts = this.allPosts()
 
+		// 要素数を制限
 		if (posts.length > 10) {
 			posts.length = 10
 		}
 
 		return posts
+	}
+
+	static relatedPosts(targetPost: Post): Post[] {
+
+		const targetTags = targetPost.tags
+		const allPosts = this.allPosts()
+
+		// postsにフィルターをかけ、タグが一件でも一致するpostのみを取り出す
+		let relatedPosts: Post[] = []
+
+		allPosts.forEach(post => {
+
+			// postとtargetPostで一致するタグを抽出
+			const matchTags = post.tags.filter(tag => targetTags.includes(tag))
+
+			// 一致タグ数が基準値以上なら、関連記事とする
+			if (matchTags.length >= 2) {
+				relatedPosts.push(post)
+			}
+		})
+
+		// 引数として渡されたpostを除外
+		relatedPosts = relatedPosts.filter(post => post.id !== targetPost.id)
+
+		// 要素数を制限
+		if (relatedPosts.length > 5) {
+			relatedPosts.length = 5
+		}
+
+		return relatedPosts
 	}
 }
 

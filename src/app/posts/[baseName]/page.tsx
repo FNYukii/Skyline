@@ -1,5 +1,6 @@
 import BackButton from '@/components/others/BackButton'
 import PostSection from '@/components/sections/PostSection'
+import RelatedPostListSection from '@/components/sections/RelatedPostListSection'
 import TableOfContentsSection from '@/components/sections/TableOfContentsSection'
 import TagListSection from '@/components/sections/TagListSection'
 import PostService from '@/utils/PostService'
@@ -41,6 +42,7 @@ export default function PostPage({ params }: { params: { baseName: string } }) {
 
 					<TableOfContentsSection content={post.content} />
 					<TagListSection label="タグ" tags={post.tags} className='mt-4' />
+					<RelatedPostListSection targetPost={post} className='mt-4'/>
 				</div>
 			</div>
 		</div>
