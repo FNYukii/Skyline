@@ -12,7 +12,7 @@ interface Props {
 
 function RelatedPostListSection(props: Props) {
 
-	const relatedPosts = PostService.relatedPosts(props.targetPost)
+	const relatedPosts = PostService.relatedPosts(props.targetPost.id)
 
 	return (
 

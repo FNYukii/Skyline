@@ -74,7 +74,9 @@ class PostService {
 		return posts
 	}
 
-	static relatedPosts(targetPost: Post): Post[] {
+	static relatedPosts(targetPostId: string): Post[] {
+
+		const targetPost = this.postFromBaseName(targetPostId)
 
 		const targetTags = targetPost.tags
 		const allPosts = this.allPosts()
