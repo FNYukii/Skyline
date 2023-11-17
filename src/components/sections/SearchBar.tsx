@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { AiOutlineClose, AiOutlineSearch } from "react-icons/ai"
+import { useRouter } from 'next/navigation'
 
 interface Props {
 	className?: string
@@ -10,6 +11,22 @@ interface Props {
 function SearchBar(props: Props) {
 
 	const [keyword, setKeyword] = useState("")
+
+	const router = useRouter()
+
+	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+		// フォームを送信しないように
+		e.preventDefault()
+
+		// keywordが空もしくは空白だけなら、検索しない
+		if (keyword === "" || !keyword.match(/\S/g)) {
+			return
+		}
+
+		// 検索画面へ遷移
+		router.push(`/search?keyword=${keyword}`)
+	}
 
 	return (
 
@@ -35,9 +52,19 @@ function SearchBar(props: Props) {
 					</div>
 				}
 
-				<input type="text" value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="検索" className="pl-11 pr-4 py-2 w-full rounded-none outline-blue-500" />
-			</div>
+				<form onSubmit={(e) => onSubmit(e)}>
 
+					<input
+						type="text"
+						value={keyword}
+						onChange={(event) => setKeyword(event.target.value)}
+						onSubmit={(event) => alert("Hello")}
+						placeholder="検索"
+						className="pl-11 pr-4 py-2 w-full rounded-none outline-blue-500"
+					/>
+				</form>
+				
+			</div>
 		</div>
 	)
 }

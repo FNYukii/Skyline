@@ -46,7 +46,7 @@ function PostListSection(props: Props) {
 							<div className="overflow-hidden text-ellipsis whitespace-nowrap">
 								{post.tags.map((tag, index) => (
 
-									<Link href="" key={index} className="mr-2 text-gray-500 hover:underline">{tag}</Link>
+									<Link href={`/search?tag=${tag}`} key={index} className="mr-2 text-gray-500 hover:underline">{tag}</Link>
 								))}
 
 								{post.tags.length === 0 &&

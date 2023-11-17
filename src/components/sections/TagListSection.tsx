@@ -20,7 +20,7 @@ function TagListSection(props: Props) {
 
 					{props.tags.map((tag, index) => (
 
-						<Link href="" key={index} className="text-gray-500 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</Link>
+						<Link href={`/search?tag=${tag}`} key={index} className="text-gray-500 hover:underline overflow-hidden text-ellipsis whitespace-nowrap">{tag}</Link>
 					))}
 
 					{props.tags.length === 0 &&
