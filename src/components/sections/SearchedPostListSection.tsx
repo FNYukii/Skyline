@@ -2,6 +2,7 @@
 
 import { useSearchParams, notFound } from 'next/navigation'
 import React from 'react'
+import PostListSection from './PostListSection'
 
 interface Props {
 	className?: string
@@ -44,9 +45,7 @@ function SearchedPostListSection(props: Props) {
 				}
 			</div>
 
-			<div className='mt-2'>
-				<p className='text-gray-500'>Comming soon</p>
-			</div>
+			<PostListSection posts={[]} className='mt-2'/>
 		</div>
 	)
 }

@@ -56,6 +56,10 @@ function PostListSection(props: Props) {
 						</div>
 					</div>
 				))}
+
+				{props.posts.length === 0 &&
+					<p className="text-gray-500">記事はありません</p>
+				}
 			</div>
 		</div>
 	)
