@@ -1,13 +1,12 @@
-import PostListSection from "@/components/sections/PostListSection"
 import SearchBar from "@/components/sections/SearchBar"
 import TagListSection from "@/components/sections/TagListSection"
-import PostService from "@/utils/PostService"
 import TagService from "@/utils/TagService"
 
-export default function Home() {
-
-	// 表示する記事
-	const allPosts = PostService.recently10Posts()
+export default function Layout({
+	children,
+}: {
+	children: React.ReactNode
+}) {
 
 	// タグ
 	const allTags = TagService.allTags()
@@ -19,7 +18,7 @@ export default function Home() {
 
 			<div className="w-full md:w-2/3 mt-12">
 
-				<PostListSection posts={allPosts} />
+				{children}
 			</div>
 
 			<div className="hidden md:block md:w-1/3 mt-4 pl-8">
