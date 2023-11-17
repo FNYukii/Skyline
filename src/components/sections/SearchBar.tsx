@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { AiOutlineClose, AiOutlineSearch } from "react-icons/ai"
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 interface Props {
 	className?: string
@@ -10,7 +10,12 @@ interface Props {
 
 function SearchBar(props: Props) {
 
-	const [keyword, setKeyword] = useState("")
+	// クエリパラメータがあるなら取得
+	const searchParams = useSearchParams()
+	const keywordFromParam = searchParams.get("keyword")
+
+	// 入力されたキーワード
+	const [keyword, setKeyword] = useState(keywordFromParam ?? "")
 
 	const router = useRouter()
 
