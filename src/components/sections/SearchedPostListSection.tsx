@@ -15,15 +15,12 @@ function SearchedPostListSection(props: Props) {
 	const tag = searchParams.get("tag")
 	const keyword = searchParams.get("keyword")
 
-	// keywordとtagどちらもセットされていないなら、404と扱う
+	// keywordとtag、どちらもnullもしくは""なら、404ページを表示
 	if (!tag && !keyword) notFound()
 
 	// 検索ワードと検索タイプを決める
 	const searchWord = tag ? tag : keyword!
 	const searchType = tag ? "tag" : "keyword"
-
-	// searchWordが空なら404へ遷移
-	if (searchWord === "") notFound()
 
 	return (
 
