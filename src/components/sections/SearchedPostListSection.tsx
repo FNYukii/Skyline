@@ -18,10 +18,8 @@ function SearchedPostListSection(props: Props) {
 	// keywordとtagどちらもセットされていないなら、404と扱う
 	if (!tag && !keyword) notFound()
 
-	// キーワードとタグのうちセットされた方を検索ワードとする
+	// 検索ワードと検索タイプを決める
 	const searchWord = tag ? tag : keyword!
-
-	// タグ検索するかどうか
 	const searchType = tag ? "tag" : "keyword"
 
 	// searchWordが空なら404へ遷移
