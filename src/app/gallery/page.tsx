@@ -9,7 +9,7 @@ export default function Page() {
 	return (
 
 		<div>
-			<p className='mt-8'>Coming soon.</p>
+			<p className='mt-8 text-gray-500'>Coming soon</p>
 		</div>
 	)
 }
