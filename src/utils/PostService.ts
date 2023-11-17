@@ -6,11 +6,15 @@ import path from 'path'
 
 class PostService {
 
-	static postFromBaseName(baseName: string): Post {
+	static postById(postId: string): Post {
+
+		// postのidをもとに、mdファイル名を求める
+		const baseName = postId
+		const fileName = `${baseName}.md`
 
 		// mdファイルへの絶対パスを取得
 		const postsDirectory = path.join(process.cwd(), 'posts')
-		const fullPath = path.join(postsDirectory, `${baseName}.md`)
+		const fullPath = path.join(postsDirectory, fileName)
 
 		// ファイル内のテキスト
 		const textInFile = fs.readFileSync(fullPath, 'utf-8')
@@ -27,7 +31,7 @@ class PostService {
 
 		// ファイルのベース名をidとして、postオブジェクトを生成
 		const post: Post = {
-			id: baseName,
+			id: postId,
 			title: title,
 			tags: tags,
 			createdAt: createdAt,
@@ -52,7 +56,7 @@ class PostService {
 			const baseName = fileName.replace(/\.md$/, '')
 
 			// ベース名を元にPostを生成
-			const post = this.postFromBaseName(baseName)
+			const post = this.postById(baseName)
 			posts.push(post)
 		})
 
@@ -76,7 +80,7 @@ class PostService {
 
 	static relatedPosts(targetPostId: string): Post[] {
 
-		const targetPost = this.postFromBaseName(targetPostId)
+		const targetPost = this.postById(targetPostId)
 
 		const targetTags = targetPost.tags
 		const allPosts = this.allPosts()

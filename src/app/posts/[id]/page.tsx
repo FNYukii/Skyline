@@ -5,22 +5,22 @@ import TableOfContentsSection from '@/components/sections/TableOfContentsSection
 import TagListSection from '@/components/sections/TagListSection'
 import PostService from '@/utils/PostService'
 
-export async function generateMetadata({ params }: { params: { baseName: string } }) {
+export async function generateMetadata({ params }: { params: { id: string } }) {
 
 	// 表示する記事
-	const baseName = params.baseName
-	const post = PostService.postFromBaseName(baseName)
+	const baseName = params.id
+	const post = PostService.postById(baseName)
 
 	return {
 		title: `${post.title} - Skyline`
 	}
 }
 
-export default function PostPage({ params }: { params: { baseName: string } }) {
+export default function PostPage({ params }: { params: { id: string } }) {
 
 	// 表示する記事
-	const baseName = params.baseName
-	const post = PostService.postFromBaseName(baseName)
+	const baseName = params.id
+	const post = PostService.postById(baseName)
 
 	return (
 
