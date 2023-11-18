@@ -1,5 +1,5 @@
-import Post from "@/entities/Post";
-import dayjs from "dayjs";
+import Post from "@/entities/Post"
+import dayjs from "dayjs"
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -108,6 +108,21 @@ class PostService {
 		}
 
 		return relatedPosts
+	}
+
+	static postsByTag(tag: string): Post[] {
+
+		const allPosts = this.allPosts()
+
+		// 指定されたタグの付いたpostのみ抽出
+		const searchedPosts = allPosts.filter(post => post.tags.includes(tag))
+
+		return searchedPosts
+	}
+
+	static postsByKeyword(keyword: string): Post[] {
+		// TODO: キーワードで検索
+		return []
 	}
 }
 
