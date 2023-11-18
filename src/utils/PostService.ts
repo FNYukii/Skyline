@@ -128,15 +128,7 @@ class PostService {
 		const postsMatchTitle = allPosts.filter(post => post.title.includes(keyword))
 
 		// いずれかのタグ中にkeywordを含むpostsを抽出
-		const postsMatchTag = allPosts.filter(post => {
-			
-			post.tags.forEach(tag => {
-
-				if (tag.includes(keyword)) {
-					return true
-				}
-			})
-		})
+		const postsMatchTag = allPosts.filter(post => post.tags.some(tag => tag.includes(keyword)))
 
 		// 2パターンで抽出したpostsを一つの配列にまとめる
 		let searchedPosts: Post[] = []
