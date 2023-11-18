@@ -61,7 +61,7 @@ function SearchedPostListSection(props: Props) {
 				}
 
 				{searchType === "keyword" &&
-					<h1 className='text-2xl font-bold'>「{searchWord}」の記事</h1>
+					<h1 className='text-2xl font-bold'>「{searchWord}」に関する記事</h1>
 				}
 			</div>
 
