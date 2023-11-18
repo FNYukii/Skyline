@@ -1,6 +1,6 @@
 "use client"
 
-import { useSearchParams, notFound, useRouter } from 'next/navigation'
+import { useSearchParams, notFound } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import PostListSection from './PostListSection'
 import Post from '@/entities/Post'
