@@ -6,10 +6,10 @@ export function GET(req: NextRequest) {
 	// APIにアクセスしてきたURIのクエリパラメータを取得
 	const tag = req.nextUrl.searchParams.get("tag")
 
-	// クエリパラメータが無ければ、エラーメッセージを返す
+	// クエリパラメータが無ければ、空の配列を返す
 	if (!tag) {
 
-		const res = NextResponse.json({message: "Error"})
+		const res = NextResponse.json({ posts: [] })
 		return res
 	}
 
