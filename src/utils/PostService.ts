@@ -1,5 +1,5 @@
-import Post from "@/entities/Post";
-import dayjs from "dayjs";
+import Post from "@/entities/Post"
+import dayjs from "dayjs"
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
