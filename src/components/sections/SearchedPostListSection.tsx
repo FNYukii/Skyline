@@ -1,6 +1,6 @@
 "use client"
 
-import { useSearchParams, notFound } from 'next/navigation'
+import { useSearchParams, notFound, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import PostListSection from './PostListSection'
 import Post from '@/entities/Post'
@@ -24,6 +24,7 @@ function SearchedPostListSection(props: Props) {
 	const searchType = tag ? "tag" : "keyword"
 
 
+
 	// 表示するposts
 	const [posts, setPosts] = useState<Post[] | null>(null)
 	const [isLoaded, setIsLoaded] = useState(false)
@@ -31,6 +32,8 @@ function SearchedPostListSection(props: Props) {
 	useEffect(() => {
 
 		(async () => {
+
+			setIsLoaded(false)
 
 			// APIを呼び出して検索
 			const response = await fetch(`/api/search?${searchType}=${searchWord}`)
@@ -44,7 +47,8 @@ function SearchedPostListSection(props: Props) {
 			setIsLoaded(true)
 		})()
 
-	}, [])
+	}, [searchParams])
+
 
 
 	return (
