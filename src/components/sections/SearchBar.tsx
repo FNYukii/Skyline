@@ -45,9 +45,9 @@ function SearchBar(props: Props) {
 				</div>
 
 				{keyword !== "" &&
-					<div className="absolute w-full flex justify-end">
+					<div className="absolute w-full   pointer-events-none	   flex justify-end">
 
-						<button onClick={() => setKeyword("")} className="mt-1 mr-2 p-2 rounded-full hover:bg-gray-100 transition">
+						<button onClick={() => setKeyword("")} className="mt-1 mr-2 p-2 rounded-full   pointer-events-auto   hover:bg-gray-100 transition">
 							<AiOutlineClose className="text-gray-500" />
 						</button>
 					</div>
