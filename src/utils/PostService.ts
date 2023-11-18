@@ -121,8 +121,24 @@ class PostService {
 	}
 
 	static postsByKeyword(keyword: string): Post[] {
-		// TODO: キーワードで検索
-		return []
+
+		const allPosts = this.allPosts()
+
+		// タイトル中にkeywordを含むpostsを抽出
+		const postsMatchTitle = allPosts.filter(post => post.title.includes(keyword))
+
+		// いずれかのタグ中にkeywordを含むpostsを抽出
+		const postsMatchTag = allPosts.filter(post => post.tags.some(tag => tag.includes(keyword)))
+
+		// 2パターンで抽出したpostsを一つの配列にまとめる
+		let searchedPosts: Post[] = []
+		searchedPosts = searchedPosts.concat(postsMatchTitle)
+		searchedPosts = searchedPosts.concat(postsMatchTag)
+
+		// 重複した要素を除外
+		const uniqueSearchedPosts = searchedPosts.filter((post, index, posts) => posts.findIndex((e) => e.id === post.id) === index)
+
+		return uniqueSearchedPosts
 	}
 }
 
