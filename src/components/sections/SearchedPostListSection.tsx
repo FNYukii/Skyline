@@ -36,14 +36,18 @@ function SearchedPostListSection(props: Props) {
 			setIsLoaded(false)
 
 			// APIを呼び出して検索
-			const response = await fetch(`/api/search?${searchType}=${searchWord}`)
+			await fetch(`/api/search?${searchType}=${searchWord}`)
+				.then(async response => {
+					
+					// UIに反映
+					const json = await response.json()
+					const posts: Post[] = json.posts
+					setPosts(posts)
+				})
+				.catch(error => {
+					// Do nothing
+				})
 
-			// TODO: エラーハンドリング
-			const json = await response.json()
-			const posts = json.posts as Post[]
-
-			// 結果をStateに格納
-			setPosts(posts)
 			setIsLoaded(true)
 		})()
 
@@ -68,6 +72,10 @@ function SearchedPostListSection(props: Props) {
 			<div className='mt-4'>
 				{!isLoaded &&
 					<p className='text-gray-500'>Loading...</p>
+				}
+
+				{isLoaded && posts === null &&
+					<p className='text-gray-500'>Failed searching posts</p>
 				}
 
 				{isLoaded && posts !== null &&
