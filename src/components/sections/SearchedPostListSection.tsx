@@ -45,7 +45,8 @@ function SearchedPostListSection(props: Props) {
 					setPosts(posts)
 				})
 				.catch(error => {
-					// Do nothing
+
+					console.log(`Error! Failed reading posts. ${error}`)
 				})
 
 			setIsLoaded(true)
