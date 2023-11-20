@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AiOutlineClose, AiOutlineSearch } from "react-icons/ai"
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 interface Props {
 	className?: string
@@ -13,7 +13,23 @@ function SearchBar(props: Props) {
 	// 入力されたキーワード
 	const [keyword, setKeyword] = useState("")
 
+	// 画面遷移やパス取得用のHooks
 	const router = useRouter()
+	const searchParams = useSearchParams()
+	
+
+
+	// タグ検索されたら、検索バーの入力値をリセット
+	useEffect(() => {
+
+		const tag = searchParams.get("tag")
+
+		if (tag !== null) {
+			setKeyword("")
+		}
+	}, [searchParams])
+
+
 
 	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
