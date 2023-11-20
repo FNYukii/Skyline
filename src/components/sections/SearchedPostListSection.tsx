@@ -4,6 +4,7 @@ import { useSearchParams, notFound } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import PostListSection from './PostListSection'
 import Post from '@/entities/Post'
+import ReactLoading from 'react-loading'
 
 interface Props {
 	className?: string
@@ -38,7 +39,7 @@ function SearchedPostListSection(props: Props) {
 			// APIを呼び出して検索
 			await fetch(`/api/search?${searchType}=${searchWord}`)
 				.then(async response => {
-					
+
 					// UIに反映
 					const json = await response.json()
 					const posts: Post[] = json.posts
@@ -61,18 +62,16 @@ function SearchedPostListSection(props: Props) {
 		<div className={props.className}>
 
 			<div>
-				{searchType === "tag" &&
-					<h1 className='text-2xl font-bold'>「{searchWord}」タグの付いた記事</h1>
-				}
-
-				{searchType === "keyword" &&
-					<h1 className='text-2xl font-bold'>「{searchWord}」に関する記事</h1>
-				}
-			</div>
-
-			<div className='mt-4'>
 				{!isLoaded &&
-					<p className='text-gray-500'>Loading...</p>
+					<div className='w-full flex justify-center'>
+
+						<ReactLoading
+							type="spin"
+							color="#666"
+							height="20px"
+							width="20px"
+						/>
+					</div>
 				}
 
 				{isLoaded && posts === null &&
@@ -80,7 +79,21 @@ function SearchedPostListSection(props: Props) {
 				}
 
 				{isLoaded && posts !== null &&
-					<PostListSection posts={posts} />
+
+					<div>
+
+						<div>
+							{searchType === "tag" &&
+								<h1 className='text-2xl font-bold'>「{searchWord}」タグの付いた記事</h1>
+							}
+
+							{searchType === "keyword" &&
+								<h1 className='text-2xl font-bold'>「{searchWord}」に関する記事</h1>
+							}
+						</div>
+
+						<PostListSection posts={posts} className='mt-4' />
+					</div>
 				}
 			</div>
 
