@@ -4,6 +4,7 @@ import { useSearchParams, notFound } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import PostListSection from './PostListSection'
 import Post from '@/entities/Post'
+import ReactLoading from 'react-loading'
 
 interface Props {
 	className?: string
@@ -62,7 +63,15 @@ function SearchedPostListSection(props: Props) {
 
 			<div>
 				{!isLoaded &&
-					<p className='text-gray-500'>Loading...</p>
+					<div className='w-full flex justify-center'>
+
+						<ReactLoading
+							type="spin"
+							color="#666"
+							height="20px"
+							width="20px"
+						/>
+					</div>
 				}
 
 				{isLoaded && posts === null &&
