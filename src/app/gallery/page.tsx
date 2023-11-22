@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
 
-	const imagePaths = ImageService.allImagePaths()
+	const galleryItems = ImageService.galleryItems()
 
 	return (
 
@@ -17,10 +17,10 @@ export default function Page() {
 
 			<div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
 
-				{imagePaths.map((imagePath, index) => (
+				{galleryItems.map((item, index) => (
 
 					<div key={index} className="relative aspect-video bg-gray-200   hover:brightness-90 hover:cursor-pointer transition">
-						<Image src={imagePath} alt="ビル" className="object-cover" fill priority />
+						<Image src={item.image} alt="ビル" className="object-cover" fill priority />
 					</div>
 				))}
 			</div>
