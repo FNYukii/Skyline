@@ -24,6 +24,8 @@ export default function Page() {
 					</div>
 				))}
 			</div>
+
+			<button className="block mt-12 mx-auto   py-2 px-16   border border-gray-300   hover:bg-gray-200 transition">もっと読み込む</button>
 		</div>
 	)
 }
