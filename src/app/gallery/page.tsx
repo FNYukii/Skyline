@@ -19,8 +19,16 @@ export default function Page() {
 
 				{photos.map((photo, index) => (
 
-					<div key={index} className="relative aspect-video bg-gray-200   hover:brightness-90 hover:cursor-pointer transition">
-						<Image src={photo.src} alt={photo.alt} className="object-cover" fill priority />
+					<div key={index}>
+
+						<div className="relative aspect-video bg-gray-200   hover:brightness-90 hover:cursor-pointer transition">
+							<Image src={photo.src} alt={photo.alt} className="object-cover" fill priority />
+						</div>
+
+						<div className='text-gray-500'>
+							<p>{photo.src}</p>
+							<p>{photo.alt}</p>
+						</div>
 					</div>
 				))}
 			</div>
