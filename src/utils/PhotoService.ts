@@ -1,11 +1,11 @@
 import Photo from "@/entities/Photo"
 import PostService from "./PostService"
-import { randomUUID } from "crypto"
 
 class PhotoService {
 
 	static allPhotos(): Photo[] {
 
+		// 全てのpostを取得
 		const posts = PostService.allPosts()
 
 		// photo要素をまとめる配列photos
@@ -57,7 +57,10 @@ class PhotoService {
 		// 重複した要素を除外
 		const uniquePhotos = photos.filter((photo, index, photos) => photos.findIndex((e) => e.src === photo.src) === index)
 
-		return uniquePhotos
+		// 配列をシャッフル
+		const shuffledPhotos = uniquePhotos.sort((a, b) => 0.5 - Math.random())
+
+		return shuffledPhotos
 	}
 }
 
