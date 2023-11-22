@@ -15,13 +15,13 @@ export default function Page() {
 		<div>
 			<h1 className='mt-12 text-2xl font-bold'>ギャラリー</h1>
 
-			<div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
+			<div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1'>
 
 				{photos.map((photo, index) => (
 
 					<div key={index}>
 
-						<div className="relative aspect-video bg-gray-200   hover:brightness-90 hover:cursor-pointer transition">
+						<div className="relative aspect-video bg-gray-200   hover:brightness-90 transition">
 							<Image src={photo.src} alt={photo.alt} className="object-cover" fill priority />
 						</div>
 					</div>
