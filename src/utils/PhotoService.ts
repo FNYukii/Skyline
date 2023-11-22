@@ -16,6 +16,7 @@ class PhotoService {
 
 				photos.push({
 					src: post.thumbnail,
+					alt: post.title,
 					postId: post.id
 				})
 			}
