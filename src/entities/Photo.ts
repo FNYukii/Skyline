@@ -1,6 +1,6 @@
 type Photo = {
 	
-	image: string
+	src: string
 	postId: string
 }
 

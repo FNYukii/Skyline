@@ -15,7 +15,7 @@ class PhotoService {
 			if (post.thumbnail) {
 
 				photos.push({
-					image: post.thumbnail,
+					src: post.thumbnail,
 					postId: post.id
 				})
 			}
