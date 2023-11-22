@@ -15,7 +15,7 @@ export default function Page() {
 		<div>
 			<h1 className='mt-12 text-2xl font-bold'>ギャラリー</h1>
 
-			<div className='mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
+			<div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
 
 				{imagePaths.map((imagePath, index) => (
 
