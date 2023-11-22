@@ -11,17 +11,17 @@ class PhotoService {
 
 		posts.forEach(post => {
 
+			// thumnailがあれば配列photosについか
 			if (post.thumbnail) {
 
-				const photo: Photo = {
+				photos.push({
 					image: post.thumbnail,
 					postId: post.id
-				}
-
-				photos.push(photo)
+				})
 			}
 
-			// TODO: post.content内の画像も配列に追加
+			// post.content内の画像も配列photosに追加
+			const imgs: string[] = post.content.match(/img/g) ?? []			
 		})
 
 		return photos
