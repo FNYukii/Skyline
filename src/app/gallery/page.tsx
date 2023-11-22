@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
 
-	const photos = PhotoService.photos()
+	const photos = PhotoService.allPhotos()
 
 	return (
 

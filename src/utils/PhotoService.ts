@@ -3,7 +3,7 @@ import PostService from "./PostService"
 
 class PhotoService {
 
-	static photos(): Photo[] {
+	static allPhotos(): Photo[] {
 
 		const posts = PostService.allPosts()
 
@@ -21,7 +21,7 @@ class PhotoService {
 				})
 			}
 
-			// post.content内の画像も配列photosに追加
+			// 本文内の画像も配列photosに追加
 			const imgs: string[] = post.content.match(/img/g) ?? []			
 		})
 
