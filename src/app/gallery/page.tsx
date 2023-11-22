@@ -1,4 +1,4 @@
-import ImageService from '@/utils/ImageService'
+import PhotoService from '@/utils/PhotoService'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
 
-	const galleryItems = ImageService.galleryItems()
+	const photos = PhotoService.photos()
 
 	return (
 
@@ -17,10 +17,10 @@ export default function Page() {
 
 			<div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
 
-				{galleryItems.map((item, index) => (
+				{photos.map((photo, index) => (
 
 					<div key={index} className="relative aspect-video bg-gray-200   hover:brightness-90 hover:cursor-pointer transition">
-						<Image src={item.image} alt="ビル" className="object-cover" fill priority />
+						<Image src={photo.image} alt="ビル" className="object-cover" fill priority />
 					</div>
 				))}
 			</div>
