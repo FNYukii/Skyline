@@ -1,5 +1,9 @@
+"use client"
+
 import Photo from '@/entities/Photo'
 import Image from 'next/image'
+import { useState } from 'react'
+import PhotoModal from '../others/PhotoModal'
 
 interface Props {
 	photos: Photo[]
@@ -7,6 +11,8 @@ interface Props {
 }
 
 export default function PhotoListSection(props: Props) {
+
+	const [isOpenModal, setIsOpenModal] = useState(false)
 
 	return (
 
@@ -18,9 +24,13 @@ export default function PhotoListSection(props: Props) {
 
 					<div key={index}>
 
-						<div className="relative aspect-video bg-gray-200   hover:brightness-90 transition">
+						<div onClick={() => setIsOpenModal(true)} className="relative aspect-video bg-gray-200   hover:brightness-90 transition">
 							<Image src={photo.src} alt={photo.alt} className="object-cover" fill priority />
 						</div>
+
+						{isOpenModal &&
+							<PhotoModal photo={photo} onClose={setIsOpenModal(false)} />
+						}
 					</div>
 				))}
 			</div>
