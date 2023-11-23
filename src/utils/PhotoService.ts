@@ -19,7 +19,8 @@ class PhotoService {
 				photos.push({
 					src: post.thumbnail,
 					alt: post.title,
-					postId: post.id
+					postId: post.id,
+					postTitle: post.title
 				})
 			}
 
@@ -49,7 +50,8 @@ class PhotoService {
 				photos.push({
 					src: src,
 					alt: alt,
-					postId: post.id
+					postId: post.id,
+					postTitle: post.title
 				})
 			})
 		})
