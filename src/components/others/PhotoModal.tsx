@@ -1,4 +1,5 @@
 import Photo from "@/entities/Photo"
+import Link from "next/link"
 import { useEffect } from "react"
 import { MdOutlineClose } from "react-icons/md"
 
@@ -38,8 +39,11 @@ function PhotoModal(props: Props) {
 
 			<div onClick={props.onClose} className="w-full h-full bg-black/50"></div>
 
-			<div className="absolute">
+			<div className="absolute flex flex-col">
+
 				<img src={props.photo.src} alt={props.photo.alt} className="max-h-[90vh] max-w-[90vw]" />
+
+				<Link href={`/posts/${props.photo.postId}`} className="mt-1 text-white hover:underline">記事を読む</Link>
 			</div>
 
 			<button onClick={props.onClose} className="absolute top-0 left-0 m-3 p-3 rounded-full bg-black/10 hover:bg-white/20 transition">
