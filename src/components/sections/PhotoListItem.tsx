@@ -19,7 +19,7 @@ function PhotoListItem(props: Props) {
 			</div>
 
 			{isOpenModal &&
-				<PhotoModal photo={props.photo} />
+				<PhotoModal photo={props.photo} onClose={() => setIsOpenModal(false)} />
 			}
 		</div>
 	)
