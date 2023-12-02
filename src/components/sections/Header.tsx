@@ -19,7 +19,6 @@ function Header(props: Props) {
 					<div className="flex gap-8">
 
 						<Link href="/" className="hover:underline">Top</Link>
-						<Link href="/map" className="hover:underline">Map</Link>
 						<Link href="/gallery" className="hover:underline">Gallery</Link>
 					</div>
 				</div>
