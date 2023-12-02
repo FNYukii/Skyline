@@ -24,6 +24,8 @@ class TagService {
 		return tags
 	}
 
+	
+
 	static recentlyTags(): string[] {
 
 		const posts = PostService.allPosts()

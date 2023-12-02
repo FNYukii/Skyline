@@ -43,6 +43,8 @@ class PostService {
 		return post
 	}
 
+
+
 	static allPosts(): Post[] {
 
 		// postsフォルダ内のファイルのファイル名をすべて取得
@@ -66,6 +68,8 @@ class PostService {
 		return posts
 	}
 
+	
+
 	static recently10Posts(): Post[] {
 
 		const posts = this.allPosts()
@@ -77,6 +81,8 @@ class PostService {
 
 		return posts
 	}
+
+
 
 	static relatedPosts(targetPostId: string): Post[] {
 
@@ -110,6 +116,8 @@ class PostService {
 		return relatedPosts
 	}
 
+
+
 	static postsByTag(tag: string): Post[] {
 
 		const allPosts = this.allPosts()
@@ -119,6 +127,8 @@ class PostService {
 
 		return searchedPosts
 	}
+
+
 
 	static postsByKeyword(keyword: string): Post[] {
 
