@@ -48,6 +48,8 @@ function PostSection(props: Props) {
 
 			<div>
 
+
+
 				<div className="flex">
 
 					{props.post.thumbnail !== null &&
@@ -66,6 +68,8 @@ function PostSection(props: Props) {
 					}
 				</div>
 
+
+
 				<div className="pt-6 pb-12 px-4 sm:px-8 bg-white">
 
 					<div className="flex justify-between gap-x-4 flex-wrap gap-y-1">
@@ -80,16 +84,30 @@ function PostSection(props: Props) {
 						</div>
 					</div>
 
-					<ReactMarkdown
-						remarkPlugins={[remarkGfm]}
-						rehypePlugins={[rehypeRaw]}
-						components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
-						className="post-content"
-					>
-						{props.post.content}
-					</ReactMarkdown>
+
+
+					<div>
+						{props.post.content === "" &&
+							<p className="mt-2 text-gray-500">内容はありません</p>
+						}
+
+						{props.post.content !== "" &&
+							<ReactMarkdown
+								remarkPlugins={[remarkGfm]}
+								rehypePlugins={[rehypeRaw]}
+								components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
+								className="post-content"
+							>
+								{props.post.content}
+							</ReactMarkdown>
+						}
+					</div>
+
+
 
 					<ImageModal image={openImage} setImage={setOpenImage} />
+
+					
 
 					{props.post.location !== null &&
 						<div className="mt-12">
@@ -103,6 +121,7 @@ function PostSection(props: Props) {
 							/>
 						</div>
 					}
+
 				</div>
 			</div>
 		</div>
