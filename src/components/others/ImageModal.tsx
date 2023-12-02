@@ -57,7 +57,7 @@ function ImageModal(props: Props) {
 					<div onClick={() => props.setImage(null)} className="w-full h-full bg-black/50"></div>
 
 					<div className="absolute">
-						<img src={props.image.src} alt={props.image.alt} className="max-h-[90vh] max-w-[90vw]" />
+						<img src={props.image.src} alt={props.image.alt} className="max-h-[95vh] max-w-[95vw]" />
 					</div>
 
 					<button onClick={() => props.setImage(null)} className="absolute top-0 left-0 m-3 p-3 rounded-full bg-black/10 hover:bg-white/20 transition">
