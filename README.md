@@ -9,7 +9,7 @@ Next.js新ルーティング方式であるApp Routerの勉強も兼ねて制作
 - Tailwind CSS
 
 ## スクリーンショット
-<img width="1440" alt="スクリーンショット 2024-02-26 14 49 46" src="https://github.com/FNYukii/Skyline/assets/65577595/c64bcfaa-4aed-4f7e-8595-5656307be975">
-<img width="1440" alt="スクリーンショット 2024-02-26 14 49 28" src="https://github.com/FNYukii/Skyline/assets/65577595/66710735-030b-49a5-9789-95614dcf89b9">
-<img width="1440" alt="スクリーンショット 2024-02-26 14 49 20" src="https://github.com/FNYukii/Skyline/assets/65577595/60a528c2-4c31-44eb-9d95-34ce34288477">
 <img width="1440" alt="スクリーンショット 2024-02-26 14 48 31" src="https://github.com/FNYukii/Skyline/assets/65577595/26447278-dccf-4453-8808-12ee67325f3d">
+<img width="1440" alt="スクリーンショット 2024-02-26 14 49 20" src="https://github.com/FNYukii/Skyline/assets/65577595/60a528c2-4c31-44eb-9d95-34ce34288477">
+<img width="1440" alt="スクリーンショット 2024-02-26 14 49 28" src="https://github.com/FNYukii/Skyline/assets/65577595/66710735-030b-49a5-9789-95614dcf89b9">
+<img width="1440" alt="スクリーンショット 2024-02-26 14 49 46" src="https://github.com/FNYukii/Skyline/assets/65577595/c64bcfaa-4aed-4f7e-8595-5656307be975">
