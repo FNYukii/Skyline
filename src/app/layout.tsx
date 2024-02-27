@@ -20,7 +20,7 @@ export default function RootLayout({
 				
 				<Header />
 
-				<main className="lg:w-[1024px] px-4 lg:px-0 mx-auto">
+				<main className="xl:w-[1200px] px-4 lg:px-0 mx-auto">
 					{children}
 				</main>
 

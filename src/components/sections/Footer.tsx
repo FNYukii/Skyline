@@ -12,7 +12,7 @@ function Footer(props: Props) {
 
 			<div className="bg-accent-color text-white pt-8 pb-4">
 
-				<div className="w-full lg:w-[1024px] px-4 lg:px-0 mx-auto">
+				<div className="w-full xl:w-[1200px] px-4 lg:px-0 mx-auto">
 
 					<div className="flex justify-between flex-wrap gap-y-8">
 
