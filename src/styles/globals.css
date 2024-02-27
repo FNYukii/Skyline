@@ -37,6 +37,12 @@
 	@apply text-gray-500
 }
 
+.post-content a {
+	@apply text-sky-800 hover:underline
+}
+
+
+
 .post-table-of-contents a {
 	@apply hover:underline
 }
