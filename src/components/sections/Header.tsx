@@ -12,7 +12,7 @@ function Header(props: Props) {
 
 			<div className="bg-accent-color text-white">
 
-				<div className="py-2 flex justify-between items-center w-full xl:w-[1200px] px-4 lg:px-0 mx-auto">
+				<div className="py-2 flex justify-between items-center w-full xl:w-[1200px] px-4 xl:px-0 mx-auto">
 
 					<Link href="/" className="text-4xl font-light">Skyline</Link>
 
