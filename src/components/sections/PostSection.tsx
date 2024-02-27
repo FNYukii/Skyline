@@ -10,6 +10,9 @@ import rehypeRaw from "rehype-raw"
 import ImageModal from "../others/ImageModal"
 import Image from "next/image"
 import { MdOutlineImageNotSupported } from "react-icons/md"
+import { FaArrowUpRightFromSquare } from "react-icons/fa6"
+
+
 
 interface Props {
 	className?: string
@@ -21,6 +24,8 @@ function PostSection(props: Props) {
 	// モーダル展開する画像
 	const [openImage, setOpenImage] = useState<{ src: string, alt: string } | null>(null)
 
+
+
 	// ID付きのh2タグ
 	function h2WithId({ ...props }) {
 
@@ -30,6 +35,8 @@ function PostSection(props: Props) {
 			<h2 id={id}>{props.children}</h2>
 		)
 	}
+
+
 
 	// モーダルを開くbuttonタグに入ったimgタグ
 	function ImgExpandable({ ...props }) {
@@ -43,12 +50,24 @@ function PostSection(props: Props) {
 		)
 	}
 
+
+
+	// target属性が設定されたaタグ
+	function aSetTarget({ ...props }) {
+		return (
+			<a target="blank" href={props.href} className="flex items-center">
+				<FaArrowUpRightFromSquare />
+				{props.children}
+			</a>
+		)
+	}
+
+
+
 	return (
 		<div className={props.className}>
 
 			<div>
-
-
 
 				<div className="flex">
 
@@ -95,7 +114,7 @@ function PostSection(props: Props) {
 							<ReactMarkdown
 								remarkPlugins={[remarkGfm]}
 								rehypePlugins={[rehypeRaw]}
-								components={{ h2: h2WithId, img: ImgExpandable }} // 特定のタグを自作の要素に置き換えて表示
+								components={{ h2: h2WithId, img: ImgExpandable, a: aSetTarget }} // 特定のタグを自作の要素に置き換えて表示
 								className="post-content"
 							>
 								{props.post.content}
@@ -107,7 +126,7 @@ function PostSection(props: Props) {
 
 					<ImageModal image={openImage} setImage={setOpenImage} />
 
-					
+
 
 					{props.post.location !== null &&
 						<div className="mt-12">
