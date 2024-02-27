@@ -10,7 +10,8 @@ Markdownファイルを元に記事を表示するブログです。Next.jsの�
 - Tailwind CSS
 
 ## スクリーンショット
-<img width="1440" alt="スクリーンショット 2024-02-26 14 48 31" src="https://github.com/FNYukii/Skyline/assets/65577595/26447278-dccf-4453-8808-12ee67325f3d">
-<img width="1440" alt="スクリーンショット 2024-02-26 14 49 20" src="https://github.com/FNYukii/Skyline/assets/65577595/60a528c2-4c31-44eb-9d95-34ce34288477">
-<img width="1440" alt="スクリーンショット 2024-02-26 14 49 28" src="https://github.com/FNYukii/Skyline/assets/65577595/66710735-030b-49a5-9789-95614dcf89b9">
-<img width="1440" alt="スクリーンショット 2024-02-26 14 49 46" src="https://github.com/FNYukii/Skyline/assets/65577595/c64bcfaa-4aed-4f7e-8595-5656307be975">
+<img width="1440" alt="スクリーンショット 2024-02-27 20 08 07" src="https://github.com/FNYukii/Skyline/assets/65577595/622d7548-e570-492a-98a8-f8403e791652">
+<img width="1440" alt="スクリーンショット 2024-02-27 20 08 20" src="https://github.com/FNYukii/Skyline/assets/65577595/b4ed1317-78fe-49fd-b33e-c4d6165b23d0">
+<img width="1440" alt="スクリーンショット 2024-02-27 20 09 14" src="https://github.com/FNYukii/Skyline/assets/65577595/d8adda74-3e48-46f5-a7d4-265473dd38e5">
+
+
