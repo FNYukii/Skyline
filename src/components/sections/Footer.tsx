@@ -41,7 +41,7 @@ function Footer(props: Props) {
 						</div>
 					</div>
 
-					<p className="mt-16 text-gray-400 text-center">© 2023 FNYukii.</p>
+					<p className="mt-16 text-gray-400 text-center">© 2024 FNYukii.</p>
 				</div>
 			</div>
 		</footer>
