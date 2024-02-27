@@ -55,8 +55,8 @@ function PostSection(props: Props) {
 	// target属性が設定されたaタグ
 	function aSetTarget({ ...props }) {
 		return (
-			<a target="blank" href={props.href} className="flex items-center">
-				<FaArrowUpRightFromSquare />
+			<a target="blank" href={props.href} className="block mt-1">
+				<FaArrowUpRightFromSquare className="inline mr-1"/>
 				{props.children}
 			</a>
 		)
